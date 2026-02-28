@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Shield, FileText, Globe, Users, Cog, Code } from "lucide-react"
+import { VendorGrid } from "@/components/vendor-grid"
 
 const services = [
   {
@@ -16,7 +17,7 @@ const services = [
   },
   {
     title: "Commercial Alignment",
-    description: "Documentation and process structuring for commercial transactions.",
+    description: "Documentation sequencing and process structuring for commercial alignment.",
     icon: FileText,
   },
   {
@@ -55,7 +56,7 @@ const steps = [
   {
     step: "04",
     title: "Coordination Support",
-    description: "Ongoing operational support throughout the transaction lifecycle.",
+    description: "Ongoing operational support throughout the coordination lifecycle.",
   },
 ]
 
@@ -208,15 +209,8 @@ export default function HomePage() {
               Reference vendors for coordination purposes.
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div
-                key={i}
-                className="flex h-20 items-center justify-center rounded-xl border border-border bg-card"
-              >
-                <div className="h-8 w-24 rounded bg-muted" />
-              </div>
-            ))}
+          <div className="mt-12">
+            <VendorGrid dense />
           </div>
           <p className="mt-6 text-xs text-muted-foreground">
             Vendor list shown for reference purposes only. No authorization or partnership is implied.

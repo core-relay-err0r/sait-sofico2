@@ -13,9 +13,9 @@ const complianceSections = [
     id: "not-licensed-bank",
     title: "Not a Licensed Bank",
     content: [
-      "SoFiCo Services Limited is not a licensed bank, credit institution, or deposit-taking entity in any jurisdiction.",
-      "The company does not hold a banking license or any license required to conduct regulated financial services.",
-      "Any references to trade or commercial activities in our service descriptions relate solely to operational coordination and documentation support, not to financial intermediation.",
+      "SoFiCo Services Limited is not a licensed bank and does not operate as a deposit-taking or credit institution.",
+      "The company does not provide regulated financial services.",
+      "Any references to trade or commercial activities on this website relate to operational coordination and documentation support.",
     ],
   },
   {
@@ -24,39 +24,27 @@ const complianceSections = [
     content: [
       "SoFiCo Services Limited does not hold, manage, or take custody of client funds under any circumstances.",
       "We do not operate client accounts, hold deposits, or process payments on behalf of clients.",
-      "All financial transactions related to trade activities are conducted directly between the relevant parties through their own banking relationships.",
-      "The company does not provide escrow services, payment processing, or any form of financial intermediation.",
+      "Any payments or transfers related to trade activities are conducted directly between the relevant parties using their own arrangements.",
+      "The company does not provide escrow services or any form of financial intermediation.",
     ],
   },
   {
     id: "export-control",
     title: "Export Control & Sanctions Compliance",
     content: [
-      "SoFiCo Services Limited maintains awareness of applicable export control regulations and sanctions regimes relevant to international trade activities.",
-      "Our coordination services include consideration of export control documentation requirements and end-use verification processes.",
-      "We do not provide legal advice regarding export control compliance. Clients are responsible for ensuring their own compliance with applicable export control and sanctions regulations.",
-      "We reserve the right to decline or terminate coordination services where we identify potential sanctions or export control concerns.",
+      "SoFiCo Services Limited maintains operational awareness of export control and sanctions considerations relevant to cross-border coordination.",
+      "We may request documentation related to end-use and end-user information as part of coordination workflows.",
+      "We do not provide regulatory advice. Clients remain responsible for their own compliance with applicable rules.",
+      "We may decline or discontinue coordination support if we identify material compliance concerns.",
     ],
   },
   {
     id: "aml-kyc",
     title: "AML / KYC Cooperation",
     content: [
-      "SoFiCo Services Limited cooperates with applicable anti-money laundering (AML) and know-your-customer (KYC) requirements.",
-      "We conduct reasonable due diligence on business relationships in accordance with our internal policies.",
-      "While we are not a regulated financial institution, we maintain appropriate record-keeping practices and will cooperate with competent authorities where legally required.",
-      "We may request corporate documentation and identity verification as part of our engagement process.",
-    ],
-  },
-  {
-    id: "regulatory-positioning",
-    title: "Regulatory Positioning Clarification",
-    content: [
-      "SoFiCo Services Limited operates as an operational coordination and business services company.",
-      "Our services are limited to coordination, documentation support, and operational structuring for B2B trade activities.",
-      "We do not engage in activities that would require licensing as a financial institution, payment service provider, or investment firm.",
-      "This positioning is designed to ensure clarity regarding the scope and nature of our activities for due diligence and regulatory assessment purposes.",
-      "Clients and counterparties should conduct their own assessment of regulatory requirements applicable to their specific activities and jurisdictions.",
+      "SoFiCo Services Limited cooperates with reasonable AML and KYC-related due diligence requested by counterparties.",
+      "We may request corporate documentation as part of onboarding and ongoing relationship management.",
+      "We maintain appropriate record-keeping practices and will cooperate with competent authorities where legally required.",
     ],
   },
 ]
@@ -150,10 +138,10 @@ export default function CompliancePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl">
             The information on this page is provided for informational purposes only and 
-            does not constitute legal advice. This information should not be relied upon 
-            as a substitute for professional legal counsel. SoFiCo Services Limited makes 
-            no representations regarding the applicability of this information to any 
-            specific situation or jurisdiction.
+            does not constitute professional advice. This information should not be relied upon 
+            as a substitute for appropriate professional counsel. SoFiCo Services Limited makes 
+            no representations regarding the applicability of this information to any specific 
+            situation or jurisdiction.
           </p>
         </div>
       </section>

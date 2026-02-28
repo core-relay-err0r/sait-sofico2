@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | SoFiCo Services Limited",
@@ -44,7 +45,7 @@ const sections = [
       "• With service providers who assist us in operating our business",
       "• To comply with legal obligations or respond to lawful requests",
       "• To protect our rights, privacy, safety, or property",
-      "• In connection with a business transaction such as a merger or acquisition",
+      "• In connection with a business reorganization such as a merger or acquisition",
       "We do not sell your personal information to third parties.",
     ],
   },
@@ -85,6 +86,8 @@ const sections = [
 ]
 
 export default function PrivacyPage() {
+  redirect("/privacy-policy")
+
   return (
     <div className="bg-background">
       {/* Header Section */}

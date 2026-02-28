@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "Cookie Policy | SoFiCo Services Limited",
@@ -26,16 +27,14 @@ const sections = [
     content: [
       "We may use the following types of cookies:",
       "• Essential Cookies: These cookies are necessary for the website to function properly and cannot be disabled.",
-      "• Analytics Cookies: These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.",
-      "• Functional Cookies: These cookies enable enhanced functionality and personalization.",
+      "• Functional Cookies: These cookies may enable basic preferences required for core site features.",
     ],
   },
   {
     title: "4. Third-Party Cookies",
     content: [
-      "Some cookies on our website are placed by third parties, such as analytics providers.",
-      "These third parties may use cookies to collect information about your online activities over time and across different websites.",
-      "We do not control these third-party cookies. Please refer to the privacy policies of these third parties for more information about their practices.",
+      "We do not use third-party analytics or advertising trackers.",
+      "If third-party services are introduced in the future, this policy will be updated accordingly.",
     ],
   },
   {
@@ -62,6 +61,8 @@ const sections = [
 ]
 
 export default function CookiesPage() {
+  redirect("/cookie-policy")
+
   return (
     <div className="bg-background">
       {/* Header Section */}

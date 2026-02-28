@@ -2,27 +2,12 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { VendorGrid } from "@/components/vendor-grid"
 
 export const metadata: Metadata = {
   title: "Vendors | SoFiCo Services Limited",
   description: "Reference vendor network for coordination purposes.",
 }
-
-// Placeholder vendor data - 12 vendors in total
-const vendors = [
-  { id: 1, name: "Vendor 1" },
-  { id: 2, name: "Vendor 2" },
-  { id: 3, name: "Vendor 3" },
-  { id: 4, name: "Vendor 4" },
-  { id: 5, name: "Vendor 5" },
-  { id: 6, name: "Vendor 6" },
-  { id: 7, name: "Vendor 7" },
-  { id: 8, name: "Vendor 8" },
-  { id: 9, name: "Vendor 9" },
-  { id: 10, name: "Vendor 10" },
-  { id: 11, name: "Vendor 11" },
-  { id: 12, name: "Vendor 12" },
-]
 
 export default function VendorsPage() {
   return (
@@ -45,17 +30,7 @@ export default function VendorsPage() {
       {/* Vendor Grid */}
       <section className="pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-            {vendors.map((vendor) => (
-              <div
-                key={vendor.id}
-                className="flex h-28 items-center justify-center rounded-2xl border border-border bg-card"
-              >
-                {/* Monochrome placeholder logo */}
-                <div className="h-10 w-32 rounded bg-muted" />
-              </div>
-            ))}
-          </div>
+          <VendorGrid />
 
           {/* Disclaimer */}
           <div className="mt-12 border border-border rounded-2xl p-6 bg-muted/30">

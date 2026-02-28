@@ -52,7 +52,7 @@ export default function AboutPage() {
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 Our operational model centers on coordination activities rather than 
-                direct commercial transactions. We provide support services that help 
+                direct commercial execution. We provide support services that help 
                 businesses navigate the operational aspects of international trade.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">

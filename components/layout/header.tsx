@@ -24,7 +24,7 @@ export function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="text-xl font-semibold tracking-tight text-foreground">
-              SoFiCo Services
+              SoFiCo Services Limited
             </span>
           </Link>
         </div>
@@ -65,7 +65,7 @@ export function Header() {
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="text-xl font-semibold tracking-tight text-foreground">
-                  SoFiCo Services
+                  SoFiCo Services Limited
                 </span>
               </Link>
               <Button

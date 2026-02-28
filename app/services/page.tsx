@@ -37,12 +37,12 @@ const services = [
     id: "commercial-alignment",
     title: "Commercial Alignment",
     icon: FileText,
-    description: "Documentation and process structuring for commercial transactions.",
+    description: "Documentation sequencing and process structuring for commercial alignment.",
     details: [
       "Documentation sequencing",
       "Commercial term structuring",
       "Process documentation",
-      "Transaction workflow support",
+      "Operational workflow support",
     ],
   },
   {
@@ -58,12 +58,12 @@ const services = [
     ],
   },
   {
-    id: "transaction-coordination",
+    id: "cross-border-coordination",
     title: "Cross-Border Operational Coordination",
     icon: ArrowRightLeft,
     description: "Support for structured cross-border documentation workflows and documentation sequences.",
     details: [
-      "Transaction documentation support",
+      "Documentation support",
       "Multi-jurisdictional coordination",
       "Workflow documentation",
       "Process sequencing",

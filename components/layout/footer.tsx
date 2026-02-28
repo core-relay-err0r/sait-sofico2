@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 const footerLinks = [
-  { name: "Privacy Policy", href: "/privacy" },
-  { name: "Terms of Use", href: "/terms" },
-  { name: "Cookie Policy", href: "/cookies" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms of Use", href: "/terms-of-use" },
+  { name: "Cookie Policy", href: "/cookie-policy" },
   { name: "Compliance", href: "/compliance" },
 ]
 

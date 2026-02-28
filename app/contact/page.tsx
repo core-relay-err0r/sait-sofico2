@@ -59,8 +59,8 @@ export default function ContactPage() {
                     Response Time
                   </h3>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    We aim to respond to all inquiries within 3-5 business days. 
-                    Complex inquiries may require additional time for proper evaluation.
+                    We review inquiries as part of our standard business operations.
+                    Response times may vary depending on the nature and completeness of the inquiry.
                   </p>
                 </div>
 

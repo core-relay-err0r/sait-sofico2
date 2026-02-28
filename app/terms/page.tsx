@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "Terms of Use | SoFiCo Services Limited",
@@ -88,6 +89,8 @@ const sections = [
 ]
 
 export default function TermsPage() {
+  redirect("/terms-of-use")
+
   return (
     <div className="bg-background">
       {/* Header Section */}

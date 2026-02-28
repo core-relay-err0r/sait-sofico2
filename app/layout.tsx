@@ -3,34 +3,14 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
+import { createRootMetadata } from '@/lib/metadata'
 
 const inter = Inter({ 
   subsets: ["latin"],
   variable: '--font-inter'
 });
 
-export const metadata: Metadata = {
-  title: 'SoFiCo Services Limited | B2B Trade Operations',
-  description: 'B2B Trade Operations & Structured Coordination. Operational coordination, supplier alignment, and documentation support for cross-border trade.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
-}
+export const metadata: Metadata = createRootMetadata()
 
 export default function RootLayout({
   children,

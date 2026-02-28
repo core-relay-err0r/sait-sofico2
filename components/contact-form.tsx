@@ -29,7 +29,7 @@ export function ContactForm() {
         </h3>
         <p className="mt-2 text-sm text-muted-foreground">
           Thank you for your inquiry. We will review your submission and respond 
-          via corporate email within 3-5 business days.
+          via corporate email.
         </p>
         <Button
           variant="outline"

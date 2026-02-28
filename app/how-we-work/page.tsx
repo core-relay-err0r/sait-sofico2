@@ -53,7 +53,7 @@ const steps = [
     title: "Coordination Support",
     subtitle: "",
     description:
-      "Ongoing operational support throughout the transaction lifecycle. We provide coordination assistance and documentation support as required.",
+      "Ongoing operational support throughout the coordination lifecycle. We provide coordination assistance and documentation support as required.",
     details: [
       "Ongoing coordination assistance",
       "Documentation support",
