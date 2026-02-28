@@ -14,7 +14,7 @@ const complianceSections = [
     title: "Not a Licensed Bank",
     content: [
       "SoFiCo Services Limited is not a licensed bank, credit institution, or deposit-taking entity in any jurisdiction.",
-      "The company does not hold a banking license, money transmission license, or any similar authorization that would permit it to conduct regulated financial activities.",
+      "The company does not hold a banking license or any license required to conduct regulated financial services.",
       "Any references to trade or commercial activities in our service descriptions relate solely to operational coordination and documentation support, not to financial intermediation.",
     ],
   },
