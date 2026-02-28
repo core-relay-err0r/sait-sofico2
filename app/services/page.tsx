@@ -59,9 +59,9 @@ const services = [
   },
   {
     id: "transaction-coordination",
-    title: "Cross-Border Transaction Coordination",
+    title: "Cross-Border Operational Coordination",
     icon: ArrowRightLeft,
-    description: "Support for structured transaction workflows and documentation sequences.",
+    description: "Support for structured cross-border documentation workflows and documentation sequences.",
     details: [
       "Transaction documentation support",
       "Multi-jurisdictional coordination",

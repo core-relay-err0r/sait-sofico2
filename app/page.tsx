@@ -25,8 +25,8 @@ const services = [
     icon: Globe,
   },
   {
-    title: "Transaction Coordination",
-    description: "Support for structured transaction workflows and documentation sequences.",
+    title: "Cross-Border Operational Coordination",
+    description: "Support for structured cross-border documentation workflows and documentation sequences.",
     icon: ArrowRight,
   },
   {
