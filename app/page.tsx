@@ -209,7 +209,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
-            {Array.from({ length: 6 }).map((_, i) => (
+            {[1, 2, 3, 4, 5, 6].map((i) => (
               <div
                 key={i}
                 className="flex h-20 items-center justify-center rounded-xl border border-border bg-card"

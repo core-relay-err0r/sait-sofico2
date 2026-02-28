@@ -9,10 +9,20 @@ export const metadata: Metadata = {
 }
 
 // Placeholder vendor data - 12 vendors in total
-const vendors = Array.from({ length: 12 }, (_, i) => ({
-  id: i + 1,
-  name: `Vendor ${i + 1}`,
-}))
+const vendors = [
+  { id: 1, name: "Vendor 1" },
+  { id: 2, name: "Vendor 2" },
+  { id: 3, name: "Vendor 3" },
+  { id: 4, name: "Vendor 4" },
+  { id: 5, name: "Vendor 5" },
+  { id: 6, name: "Vendor 6" },
+  { id: 7, name: "Vendor 7" },
+  { id: 8, name: "Vendor 8" },
+  { id: 9, name: "Vendor 9" },
+  { id: 10, name: "Vendor 10" },
+  { id: 11, name: "Vendor 11" },
+  { id: 12, name: "Vendor 12" },
+]
 
 export default function VendorsPage() {
   return (
