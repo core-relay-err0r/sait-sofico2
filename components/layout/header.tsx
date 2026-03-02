@@ -45,7 +45,7 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
             >
               {item.name}
             </Link>
@@ -57,7 +57,7 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50">
           <div 
-            className="fixed inset-0 bg-foreground/20" 
+            className="fixed inset-0 bg-foreground/10" 
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
@@ -84,7 +84,7 @@ export function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="block px-3 py-2.5 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                      className="block px-3 py-2.5 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-card"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}

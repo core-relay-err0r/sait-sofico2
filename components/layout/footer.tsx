@@ -23,7 +23,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-lg font-semibold text-foreground">
+            <h3 className="text-lg font-semibold tracking-tight text-foreground">
               SoFiCo Services Limited
             </h3>
             <div className="mt-4 space-y-2 text-sm text-muted-foreground">
@@ -35,13 +35,13 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground">Navigation</h4>
+            <h4 className="text-xs font-semibold tracking-wide text-foreground uppercase">Navigation</h4>
             <ul className="mt-4 space-y-2">
               {navigationLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground transition-colors hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-card rounded"
                   >
                     {link.name}
                   </Link>
@@ -52,13 +52,13 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground">Legal</h4>
+            <h4 className="text-xs font-semibold tracking-wide text-foreground uppercase">Legal</h4>
             <ul className="mt-4 space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground transition-colors hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-card rounded"
                   >
                     {link.name}
                   </Link>
