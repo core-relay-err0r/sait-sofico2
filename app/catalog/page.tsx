@@ -7,17 +7,18 @@ import { catalogItems } from "@/content/catalog"
 import { getCatalogAccessKey } from "@/lib/env"
 
 type Props = {
-  searchParams?: Record<string, string | string[] | undefined>
+  searchParams?: Promise<Record<string, string | string[] | undefined>>
 }
 
-function getKey(searchParams?: Props["searchParams"]): string | undefined {
+function getKey(searchParams?: Record<string, string | string[] | undefined>): string | undefined {
   const raw = searchParams?.k
   return typeof raw === "string" ? raw : undefined
 }
 
-export default function CatalogPage({ searchParams }: Props) {
+export default async function CatalogPage({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams
   const requiredKey = getCatalogAccessKey()
-  const key = getKey(searchParams)
+  const key = getKey(resolvedSearchParams)
   const allowed = !!requiredKey && key === requiredKey
 
   return (

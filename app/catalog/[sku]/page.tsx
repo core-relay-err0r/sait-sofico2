@@ -19,18 +19,20 @@ export const metadata: Metadata = {
 }
 
 type Props = {
-  params: { sku: string }
-  searchParams?: Record<string, string | string[] | undefined>
+  params: Promise<{ sku: string }>
+  searchParams?: Promise<Record<string, string | string[] | undefined>>
 }
 
-function getKey(searchParams?: Props["searchParams"]): string | undefined {
+function getKey(searchParams?: Record<string, string | string[] | undefined>): string | undefined {
   const raw = searchParams?.k
   return typeof raw === "string" ? raw : undefined
 }
 
-export default function CatalogItemPage({ params, searchParams }: Props) {
+export default async function CatalogItemPage({ params, searchParams }: Props) {
+  const resolvedParams = await params
+  const resolvedSearchParams = await searchParams
   const requiredKey = getCatalogAccessKey()
-  const key = getKey(searchParams)
+  const key = getKey(resolvedSearchParams)
   const allowed = !!requiredKey && key === requiredKey
 
   if (!allowed) {
@@ -50,7 +52,7 @@ export default function CatalogItemPage({ params, searchParams }: Props) {
     )
   }
 
-  const item = getCatalogItemBySku(params.sku)
+  const item = getCatalogItemBySku(resolvedParams.sku)
 
   if (!item) {
     return (
