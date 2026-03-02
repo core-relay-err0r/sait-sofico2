@@ -12,10 +12,11 @@ export default function AboutPage() {
   return (
     <div className="bg-background">
       {/* Header Section */}
-      <section className="py-20 lg:py-28">
+      <section className="py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground lg:text-5xl text-balance">
+            <span className="eyebrow">About Us</span>
+            <h1 className="mt-4 text-4xl font-semibold text-foreground lg:text-5xl text-balance" style={{ letterSpacing: '-0.02em' }}>
               About SoFiCo Services
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
@@ -27,11 +28,12 @@ export default function AboutPage() {
       </section>
 
       {/* Corporate Positioning */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-20 bg-card border-y border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="text-2xl font-semibold text-foreground">
+              <span className="eyebrow">Overview</span>
+              <h2 className="mt-3 text-2xl font-semibold text-foreground">
                 Corporate Positioning
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
@@ -47,7 +49,8 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl font-semibold text-foreground">
+              <span className="eyebrow">Focus</span>
+              <h2 className="mt-3 text-2xl font-semibold text-foreground">
                 Operational Focus
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
@@ -66,13 +69,14 @@ export default function AboutPage() {
       </section>
 
       {/* Structured Coordination Model */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-foreground">
+          <span className="eyebrow">Approach</span>
+          <h2 className="mt-3 text-2xl font-semibold text-foreground">
             Structured Coordination Model
           </h2>
-          <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
-            <div className="border border-border rounded-2xl p-6 bg-card">
+          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
+            <div className="border border-border rounded-lg p-6 bg-card">
               <h3 className="text-lg font-semibold text-foreground">
                 Documentation Support
               </h3>
@@ -81,7 +85,7 @@ export default function AboutPage() {
                 specification alignment and document sequencing.
               </p>
             </div>
-            <div className="border border-border rounded-2xl p-6 bg-card">
+            <div className="border border-border rounded-lg p-6 bg-card">
               <h3 className="text-lg font-semibold text-foreground">
                 Vendor Coordination
               </h3>
@@ -90,7 +94,7 @@ export default function AboutPage() {
                 coordination of multi-party interactions.
               </p>
             </div>
-            <div className="border border-border rounded-2xl p-6 bg-card">
+            <div className="border border-border rounded-lg p-6 bg-card">
               <h3 className="text-lg font-semibold text-foreground">
                 Process Structuring
               </h3>
@@ -104,13 +108,14 @@ export default function AboutPage() {
       </section>
 
       {/* Risk & Responsibility */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-20 bg-card border-y border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h2 className="text-2xl font-semibold text-foreground">
+            <span className="eyebrow">Responsibility</span>
+            <h2 className="mt-3 text-2xl font-semibold text-foreground">
               Risk & Responsibility
             </h2>
-            <div className="mt-6 border border-border rounded-2xl p-6 bg-card">
+            <div className="mt-8 border border-border rounded-lg p-6 bg-background">
               <p className="text-muted-foreground leading-relaxed">
                 SoFiCo Services Limited is not a licensed financial institution and 
                 does not provide banking, payment, or custody services. Our operational 
@@ -129,16 +134,16 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild className="rounded-xl">
+            <Button asChild className="rounded-lg">
               <Link href="/services">
                 View Our Services
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-xl">
+            <Button asChild variant="outline" className="rounded-lg border-border hover:bg-muted hover:text-foreground">
               <Link href="/contact">
                 Contact Us
               </Link>

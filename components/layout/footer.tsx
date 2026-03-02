@@ -19,7 +19,7 @@ const navigationLinks = [
 export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           {/* Company Info */}
           <div className="lg:col-span-2">
@@ -35,7 +35,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-xs font-semibold tracking-wide text-foreground uppercase">Navigation</h4>
+            <h4 className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">Navigation</h4>
             <ul className="mt-4 space-y-2">
               {navigationLinks.map((link) => (
                 <li key={link.name}>
@@ -52,7 +52,7 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-xs font-semibold tracking-wide text-foreground uppercase">Legal</h4>
+            <h4 className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">Legal</h4>
             <ul className="mt-4 space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.name}>
@@ -69,7 +69,7 @@ export function Footer() {
         </div>
 
         {/* Compliance Notice */}
-        <div className="mt-12 border-t border-border pt-8">
+        <div className="mt-14 border-t border-border pt-8">
           <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl">
             SoFiCo Services Limited is not a bank and does not provide payment services. 
             The company does not hold or take custody of client funds.
@@ -77,7 +77,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 border-t border-border pt-8">
+        <div className="mt-6 pt-6">
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} SoFiCo Services Limited. All rights reserved.
           </p>

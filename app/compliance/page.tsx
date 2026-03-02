@@ -53,10 +53,11 @@ export default function CompliancePage() {
   return (
     <div className="bg-background">
       {/* Header Section */}
-      <section className="py-20 lg:py-28">
+      <section className="py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground lg:text-5xl text-balance">
+            <span className="eyebrow">Regulatory</span>
+            <h1 className="mt-4 text-4xl font-semibold text-foreground lg:text-5xl text-balance" style={{ letterSpacing: '-0.02em' }}>
               Compliance
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
@@ -68,15 +69,15 @@ export default function CompliancePage() {
       </section>
 
       {/* Compliance Sections */}
-      <section className="pb-20">
+      <section className="pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="space-y-8">
+          <div className="space-y-6">
             {complianceSections.map((section, index) => (
               <div
                 key={section.id}
                 id={section.id}
-                className={`border border-border rounded-2xl p-8 ${
-                  index % 2 === 0 ? "bg-card" : "bg-muted/30"
+                className={`border border-border rounded-lg p-8 ${
+                  index % 2 === 0 ? "bg-card" : "bg-muted/50"
                 }`}
               >
                 <h2 className="text-xl font-semibold text-foreground">
@@ -99,10 +100,10 @@ export default function CompliancePage() {
       </section>
 
       {/* Additional Information */}
-      <section className="py-16 bg-muted/30 border-t border-border">
+      <section className="py-20 bg-card border-y border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <div className="border border-border rounded-2xl p-6 bg-card">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <div className="border border-border rounded-lg p-6 bg-background">
               <h3 className="text-lg font-semibold text-foreground">
                 Due Diligence Support
               </h3>
@@ -113,7 +114,7 @@ export default function CompliancePage() {
                 processes upon request.
               </p>
             </div>
-            <div className="border border-border rounded-2xl p-6 bg-card">
+            <div className="border border-border rounded-lg p-6 bg-background">
               <h3 className="text-lg font-semibold text-foreground">
                 Questions
               </h3>
@@ -122,7 +123,7 @@ export default function CompliancePage() {
                 additional information for due diligence purposes, please contact 
                 us through our standard inquiry process.
               </p>
-              <Button asChild variant="outline" className="mt-4 rounded-xl">
+              <Button asChild variant="outline" className="mt-4 rounded-lg border-border hover:bg-muted hover:text-foreground">
                 <Link href="/contact">
                   Submit Inquiry
                   <ArrowRight className="ml-2 h-4 w-4" />

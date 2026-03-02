@@ -87,10 +87,11 @@ export default function ServicesPage() {
   return (
     <div className="bg-background">
       {/* Header Section */}
-      <section className="py-20 lg:py-28">
+      <section className="py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground lg:text-5xl text-balance">
+            <span className="eyebrow">What We Offer</span>
+            <h1 className="mt-4 text-4xl font-semibold text-foreground lg:text-5xl text-balance" style={{ letterSpacing: '-0.02em' }}>
               Services
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
@@ -102,19 +103,19 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="pb-20">
+      <section className="pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="space-y-12">
+          <div className="space-y-8">
             {services.map((service, index) => (
               <div
                 key={service.id}
-                className={`border border-border rounded-2xl p-8 ${
-                  index % 2 === 0 ? "bg-card" : "bg-muted/30"
+                className={`border border-border rounded-lg p-8 ${
+                  index % 2 === 0 ? "bg-card" : "bg-muted/50"
                 }`}
               >
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                    <service.icon className="h-6 w-6 text-primary" />
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-muted border border-border">
+                    <service.icon className="h-6 w-6 text-accent" />
                   </div>
                   <div className="flex-1">
                     <h2 className="text-xl font-semibold text-foreground">
@@ -143,9 +144,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Disclaimer */}
-      <section className="py-12 bg-muted/30 border-t border-border">
+      <section className="py-16 bg-card border-y border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="border border-border rounded-2xl p-6 bg-card">
+          <div className="border border-border rounded-lg p-6 bg-background">
             <h3 className="text-sm font-semibold text-foreground">Important Notice</h3>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
               Not a licensed bank. Not a financial institution. No custody of client funds. 
@@ -158,16 +159,16 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild className="rounded-xl">
+            <Button asChild className="rounded-lg">
               <Link href="/contact">
                 Request a Business Introduction
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-xl">
+            <Button asChild variant="outline" className="rounded-lg border-border hover:bg-muted hover:text-foreground">
               <Link href="/how-we-work">
                 Learn How We Work
               </Link>

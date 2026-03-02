@@ -10,10 +10,11 @@ export default function ContactPage() {
   return (
     <div className="bg-background">
       {/* Header Section */}
-      <section className="py-20 lg:py-28">
+      <section className="py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground lg:text-5xl text-balance">
+            <span className="eyebrow">Get in Touch</span>
+            <h1 className="mt-4 text-4xl font-semibold text-foreground lg:text-5xl text-balance" style={{ letterSpacing: '-0.02em' }}>
               Contact
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
@@ -25,12 +26,12 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="pb-20">
+      <section className="pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             {/* Form */}
             <div className="lg:col-span-7">
-              <div className="border border-border rounded-2xl p-8 bg-card">
+              <div className="border border-border rounded-lg p-8 bg-card">
                 <h2 className="text-xl font-semibold text-foreground">
                   Business Inquiry Form
                 </h2>
@@ -43,8 +44,8 @@ export default function ContactPage() {
 
             {/* Information */}
             <div className="lg:col-span-5">
-              <div className="space-y-6">
-                <div className="border border-border rounded-2xl p-6 bg-muted/30">
+              <div className="space-y-5">
+                <div className="border border-border rounded-lg p-6 bg-muted/50">
                   <h3 className="text-lg font-semibold text-foreground">
                     Communication Policy
                   </h3>
@@ -54,7 +55,7 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <div className="border border-border rounded-2xl p-6 bg-muted/30">
+                <div className="border border-border rounded-lg p-6 bg-muted/50">
                   <h3 className="text-lg font-semibold text-foreground">
                     Response Time
                   </h3>
@@ -64,7 +65,7 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <div className="border border-border rounded-2xl p-6 bg-muted/30">
+                <div className="border border-border rounded-lg p-6 bg-muted/50">
                   <h3 className="text-lg font-semibold text-foreground">
                     Inquiry Scope
                   </h3>
@@ -81,7 +82,7 @@ export default function ContactPage() {
       </section>
 
       {/* Disclaimer */}
-      <section className="py-12 bg-muted/30 border-t border-border">
+      <section className="py-16 bg-card border-t border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl">
             Submission of an inquiry does not create a client relationship or contractual 

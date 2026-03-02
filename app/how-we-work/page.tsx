@@ -85,10 +85,11 @@ export default function HowWeWorkPage() {
   return (
     <div className="bg-background">
       {/* Header Section */}
-      <section className="py-20 lg:py-28">
+      <section className="py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground lg:text-5xl text-balance">
+            <span className="eyebrow">Our Process</span>
+            <h1 className="mt-4 text-4xl font-semibold text-foreground lg:text-5xl text-balance" style={{ letterSpacing: '-0.02em' }}>
               How We Work
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
@@ -100,19 +101,19 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* Process Steps */}
-      <section className="pb-20">
+      <section className="pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
             {/* Steps */}
             <div className="lg:col-span-8">
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {steps.map((step, index) => (
                   <div
                     key={step.step}
-                    className="border border-border rounded-2xl p-8 bg-card"
+                    className="border border-border rounded-lg p-8 bg-card"
                   >
                     <div className="flex items-start gap-6">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground font-semibold text-lg">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground font-semibold text-lg">
                         {step.step}
                       </div>
                       <div className="flex-1">
@@ -147,9 +148,9 @@ export default function HowWeWorkPage() {
 
             {/* Compliance Checkpoints Sidebar */}
             <div className="lg:col-span-4">
-              <div className="sticky top-8 border border-border rounded-2xl p-6 bg-muted/30">
+              <div className="sticky top-24 border border-border rounded-lg p-6 bg-card">
                 <div className="flex items-center gap-3 mb-6">
-                  <FileSearch className="h-5 w-5 text-primary" />
+                  <FileSearch className="h-5 w-5 text-accent" />
                   <h3 className="text-lg font-semibold text-foreground">
                     Compliance Checkpoints
                   </h3>
@@ -157,8 +158,8 @@ export default function HowWeWorkPage() {
                 <div className="space-y-6">
                   {complianceCheckpoints.map((checkpoint) => (
                     <div key={checkpoint.title} className="flex items-start gap-3">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                        <checkpoint.icon className="h-4 w-4 text-primary" />
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted border border-border">
+                        <checkpoint.icon className="h-4 w-4 text-accent" />
                       </div>
                       <div>
                         <h4 className="text-sm font-semibold text-foreground">
@@ -172,7 +173,7 @@ export default function HowWeWorkPage() {
                   ))}
                 </div>
                 <div className="mt-8 pt-6 border-t border-border">
-                  <Button asChild variant="outline" className="w-full rounded-xl">
+                  <Button asChild variant="outline" className="w-full rounded-lg border-border hover:bg-muted hover:text-foreground">
                     <Link href="/compliance">
                       View Full Compliance Information
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -186,16 +187,16 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-muted/30 border-t border-border">
+      <section className="py-20 bg-card border-t border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild className="rounded-xl">
+            <Button asChild className="rounded-lg">
               <Link href="/contact">
                 Start a Conversation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-xl">
+            <Button asChild variant="outline" className="rounded-lg border-border hover:bg-muted hover:text-foreground">
               <Link href="/services">
                 View Our Services
               </Link>

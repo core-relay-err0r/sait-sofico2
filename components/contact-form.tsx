@@ -23,7 +23,7 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="mt-8 border border-border rounded-xl p-6 bg-muted/30">
+      <div className="mt-8 border border-border rounded-lg p-6 bg-muted/50">
         <h3 className="text-lg font-semibold text-foreground">
           Inquiry Submitted
         </h3>
@@ -33,7 +33,7 @@ export function ContactForm() {
         </p>
         <Button
           variant="outline"
-          className="mt-4 rounded-xl"
+          className="mt-4 rounded-lg border-border hover:bg-muted hover:text-foreground"
           onClick={() => setIsSubmitted(false)}
         >
           Submit Another Inquiry
@@ -52,7 +52,7 @@ export function ContactForm() {
           type="text"
           required
           placeholder="Enter company name"
-          className="rounded-xl"
+          className="rounded-lg focus-visible:ring-ring"
         />
       </div>
 
@@ -64,7 +64,7 @@ export function ContactForm() {
           type="text"
           required
           placeholder="Enter contact person name"
-          className="rounded-xl"
+          className="rounded-lg focus-visible:ring-ring"
         />
       </div>
 
@@ -76,7 +76,7 @@ export function ContactForm() {
           type="email"
           required
           placeholder="Enter corporate email address"
-          className="rounded-xl"
+          className="rounded-lg focus-visible:ring-ring"
         />
         <p className="text-xs text-muted-foreground">
           Personal email addresses (e.g., gmail.com, yahoo.com) are not accepted.
@@ -91,14 +91,14 @@ export function ContactForm() {
           required
           rows={5}
           placeholder="Describe your inquiry or operational coordination requirements"
-          className="rounded-xl resize-none"
+          className="rounded-lg resize-none focus-visible:ring-ring"
         />
       </div>
 
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="rounded-xl w-full sm:w-auto"
+        className="rounded-lg w-full sm:w-auto"
       >
         {isSubmitting ? "Submitting..." : "Submit Inquiry"}
       </Button>
