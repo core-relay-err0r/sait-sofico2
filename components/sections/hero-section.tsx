@@ -47,9 +47,9 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex flex-col bg-[#0B1F3B] pt-20 overflow-hidden">
+    <section ref={heroRef} className="relative h-screen flex flex-col bg-[#0B1F3B] overflow-hidden">
       {/* LightPillar Background */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full z-0">
         <LightPillar
           topColor="#1D4ED8"
           bottomColor="#0B1F3B"
@@ -66,8 +66,8 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Main content - centered with padding for scroll indicator */}
-      <div className="relative z-10 flex-1 flex items-center justify-center pb-24 pt-8">
+      {/* Main content - centered with padding for header and scroll indicator */}
+      <div className="relative z-10 flex-1 flex items-center justify-center pt-24 pb-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
           {/* Eyebrow */}
           <div className="hero-eyebrow">
@@ -107,10 +107,11 @@ export function HeroSection() {
       </div>
 
       {/* Scroll Indicator - fixed at bottom */}
-      <div className="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center z-10">
-        <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">
+      <div className="hero-scroll absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+        <span className="text-[10px] uppercase tracking-[0.2em] text-white/50">
           Scroll
         </span>
+        <div className="w-px h-8 bg-gradient-to-b from-white/50 to-transparent" />
       </div>
     </section>
   )
