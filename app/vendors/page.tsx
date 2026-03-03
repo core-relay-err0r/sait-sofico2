@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import { vendorPlaceholders } from "@/content/vendors"
+import { vendors } from "@/content/vendors"
 
 export default function VendorsPage() {
   return (
@@ -25,13 +25,18 @@ export default function VendorsPage() {
       {/* Vendor Grid */}
       <section className="py-16 lg:py-20 border-t border-border">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-px bg-border">
-            {vendorPlaceholders.map((vendor) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-border">
+            {vendors.map((vendor) => (
               <div
                 key={vendor.id}
-                className="bg-background aspect-[2/1] flex items-center justify-center"
+                className="bg-card aspect-[2/1] flex flex-col items-center justify-center p-4 transition-colors hover:bg-card/80"
               >
-                <div className="h-5 w-16 rounded-sm bg-muted" aria-label={vendor.name} />
+                <span className="text-sm sm:text-base font-medium text-foreground">
+                  {vendor.name}
+                </span>
+                <span className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">
+                  {vendor.category}
+                </span>
               </div>
             ))}
           </div>

@@ -123,7 +123,7 @@ export function Footer() {
               © {new Date().getFullYear()} SoFiCo Services Limited. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground/60 leading-relaxed">
-              Registration: TEMP-XXXX · Not a bank. Does not provide payment services or hold client funds.
+              Registration No: 3127845 · Not a bank. Does not provide payment services or hold client funds.
             </p>
           </div>
         </div>
