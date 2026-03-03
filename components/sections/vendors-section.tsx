@@ -22,9 +22,9 @@ export function VendorsSection() {
           {vendorPlaceholders.slice(0, 6).map((vendor) => (
             <div 
               key={vendor.id} 
-              className="group border border-border/50 bg-foreground/5 aspect-[2.5/1] flex items-center justify-center transition-all duration-300 hover:border-accent/50 hover:bg-foreground/10"
+              className="group border border-border bg-background aspect-[2.5/1] flex items-center justify-center transition-all duration-300 hover:border-primary/50 hover:shadow-sm"
             >
-              <div className="h-6 w-20 rounded bg-foreground/20 group-hover:bg-foreground/30 transition-colors" aria-label={vendor.name} />
+              <div className="h-6 w-20 rounded bg-muted group-hover:bg-border transition-colors" aria-label={vendor.name} />
             </div>
           ))}
         </div>

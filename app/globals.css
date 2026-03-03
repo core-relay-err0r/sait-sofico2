@@ -46,40 +46,45 @@
 }
 
 :root {
-  /* Pure Black Luxury Theme */
-  --background: oklch(0 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.06 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.06 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.98 0 0);
-  --primary-foreground: oklch(0 0 0);
-  --secondary: oklch(0.12 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.1 0 0);
-  --muted-foreground: oklch(0.55 0 0);
-  --accent: oklch(0.75 0.06 85);
-  --accent-foreground: oklch(0.1 0 0);
-  --destructive: oklch(0.55 0.2 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.18 0 0);
-  --input: oklch(0.12 0 0);
-  --ring: oklch(0.75 0.06 85);
-  --chart-1: oklch(0.75 0.06 85);
-  --chart-2: oklch(0.6 0 0);
-  --chart-3: oklch(0.45 0 0);
-  --chart-4: oklch(0.3 0 0);
-  --chart-5: oklch(0.15 0 0);
+  /* Light Enterprise Theme */
+  --background: #FFFFFF;
+  --foreground: #111827;
+  --card: #F5F7FA;
+  --card-foreground: #111827;
+  --popover: #FFFFFF;
+  --popover-foreground: #111827;
+  --primary: #0B1F3B;
+  --primary-foreground: #FFFFFF;
+  --secondary: #2B2F36;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F5F7FA;
+  --muted-foreground: #6B7280;
+  --accent: #1D4ED8;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #1D4ED8;
+  --chart-1: #1D4ED8;
+  --chart-2: #0B1F3B;
+  --chart-3: #2B2F36;
+  --chart-4: #6B7280;
+  --chart-5: #E5E7EB;
   --radius: 0.25rem;
-  --sidebar: oklch(0.04 0 0);
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.75 0.06 85);
-  --sidebar-primary-foreground: oklch(0.1 0 0);
-  --sidebar-accent: oklch(0.12 0 0);
-  --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(0.18 0 0);
-  --sidebar-ring: oklch(0.75 0.06 85);
+  --sidebar: #F5F7FA;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #1D4ED8;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E5E7EB;
+  --sidebar-accent-foreground: #111827;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #1D4ED8;
+  
+  /* Additional semantic colors */
+  --success: #16A34A;
+  --warning: #F59E0B;
+  --error: #DC2626;
 }
 
 @layer base {
@@ -160,21 +165,17 @@
   }
   
   /* Cards */
-  .card-luxury {
+  .card-enterprise {
     @apply border border-border bg-card;
   }
   
   /* Buttons */
-  .btn-luxury {
-    @apply inline-flex items-center justify-center text-[13px] font-medium uppercase tracking-[0.2em] transition-all duration-500 ease-out;
-  }
-  
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-primary text-primary-foreground transition-all duration-200 hover:bg-accent;
   }
   
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-primary hover:bg-muted;
   }
   
   .btn-ghost {
@@ -211,8 +212,8 @@
 
 /* Custom Selection */
 ::selection {
-  background: oklch(0.75 0.06 85 / 0.4);
-  color: oklch(0 0 0);
+  background: #1D4ED8;
+  color: #FFFFFF;
 }
 
 /* Scrollbar */
@@ -220,11 +221,11 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: oklch(0 0 0);
+  background: #F5F7FA;
 }
 ::-webkit-scrollbar-thumb {
-  background: oklch(0.2 0 0);
+  background: #E5E7EB;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.3 0 0);
+  background: #6B7280;
 }

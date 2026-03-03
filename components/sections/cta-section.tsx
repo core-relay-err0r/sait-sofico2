@@ -19,14 +19,14 @@ export function CTASection() {
         <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <Link 
             href="/contact" 
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-2.5 text-xs font-medium uppercase tracking-widest bg-foreground text-background transition-all duration-200 hover:bg-accent"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-2.5 text-xs font-medium uppercase tracking-widest bg-primary text-primary-foreground transition-all duration-200 hover:bg-accent"
           >
             Request Introduction
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           <Link 
             href="/services" 
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 sm:py-2.5 text-xs font-medium uppercase tracking-widest border border-border/60 text-foreground/80 transition-all duration-200 hover:border-foreground hover:text-foreground"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 sm:py-2.5 text-xs font-medium uppercase tracking-widest border border-border text-foreground transition-all duration-200 hover:border-primary hover:bg-muted"
           >
             View Services
           </Link>

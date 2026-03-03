@@ -24,7 +24,7 @@ export function ComplianceSection() {
         <div className="mt-12">
           <Link 
             href="/compliance" 
-            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-xs font-medium uppercase tracking-widest border border-border/60 text-foreground/80 transition-all duration-200 hover:border-foreground hover:text-foreground"
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-xs font-medium uppercase tracking-widest border border-border text-foreground transition-all duration-200 hover:border-primary hover:bg-muted"
           >
             View Compliance Information
             <ArrowRight className="h-3.5 w-3.5" />

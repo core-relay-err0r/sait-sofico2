@@ -59,7 +59,7 @@ export function Header() {
           <div className="hidden md:block">
             <Link 
               href="/contact"
-              className="inline-flex items-center justify-center px-4 lg:px-6 py-2 lg:py-2.5 text-xs lg:text-sm font-medium bg-foreground text-background transition-colors duration-200 hover:bg-foreground/90"
+              className="inline-flex items-center justify-center px-4 lg:px-6 py-2 lg:py-2.5 text-xs lg:text-sm font-medium bg-primary text-primary-foreground transition-colors duration-200 hover:bg-accent"
             >
               Get Started
             </Link>
@@ -114,7 +114,7 @@ export function Header() {
             <div className="flex-shrink-0 px-6 py-6 border-t border-border">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center w-full px-6 py-4 text-sm font-medium bg-foreground text-background"
+                className="inline-flex items-center justify-center w-full px-6 py-4 text-sm font-medium bg-primary text-primary-foreground hover:bg-accent transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get Started

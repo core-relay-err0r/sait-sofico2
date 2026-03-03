@@ -39,7 +39,7 @@ export function ProcessSection() {
         <div className="mt-20 text-center">
           <Link 
             href="/how-we-work" 
-            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-xs font-medium uppercase tracking-widest border border-border/60 text-foreground/80 transition-all duration-200 hover:border-foreground hover:text-foreground"
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-xs font-medium uppercase tracking-widest border border-border text-foreground transition-all duration-200 hover:border-primary hover:bg-muted"
           >
             Explore Our Process
             <ArrowRight className="h-3.5 w-3.5" />
