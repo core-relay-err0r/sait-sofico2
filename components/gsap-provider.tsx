@@ -40,7 +40,7 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
             trigger: el as Element,
             start: 'top 85%',
             end: 'top 20%',
-            toggleActions: 'play reverse play reverse'
+            toggleActions: 'play none none none'
           }
         }
       )
@@ -58,7 +58,7 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
             trigger: el as Element,
             start: 'top 85%',
             end: 'top 20%',
-            toggleActions: 'play reverse play reverse'
+            toggleActions: 'play none none none'
           }
         }
       )
@@ -77,7 +77,7 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
             trigger: el as Element,
             start: 'top 85%',
             end: 'top 20%',
-            toggleActions: 'play reverse play reverse'
+            toggleActions: 'play none none none'
           }
         }
       )
@@ -96,7 +96,7 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
             trigger: el as Element,
             start: 'top 85%',
             end: 'top 20%',
-            toggleActions: 'play reverse play reverse'
+            toggleActions: 'play none none none'
           }
         }
       )
@@ -115,7 +115,7 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
             trigger: el as Element,
             start: 'top 85%',
             end: 'top 20%',
-            toggleActions: 'play reverse play reverse'
+            toggleActions: 'play none none none'
           }
         }
       )
@@ -133,7 +133,7 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
             trigger: el as Element,
             start: 'top 90%',
             end: 'top 20%',
-            toggleActions: 'play reverse play reverse'
+            toggleActions: 'play none none none'
           }
         }
       )
@@ -152,7 +152,7 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
           trigger: container as Element,
           start: 'top 85%',
           end: 'top 20%',
-          toggleActions: 'play reverse play reverse'
+          toggleActions: 'play none none none'
         }
       })
       
@@ -179,7 +179,7 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
             trigger: el as Element,
             start: 'top 85%',
             end: 'top 20%',
-            toggleActions: 'play reverse play reverse'
+            toggleActions: 'play none none none'
           }
         }
       )
