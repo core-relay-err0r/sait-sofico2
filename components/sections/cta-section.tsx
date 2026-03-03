@@ -5,18 +5,18 @@ export function CTASection() {
   return (
     <section className="pt-20 pb-16 border-t border-border">
       <div className="mx-auto max-w-3xl px-6 text-center">
-        <span className="gsap-fade-up inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
+        <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
           Get Started
         </span>
-        <h2 className="gsap-fade-up mt-6 font-serif text-4xl sm:text-5xl font-normal text-foreground">
+        <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-normal text-foreground">
           Ready to Begin?
         </h2>
-        <div className="gsap-line-grow mt-8 h-px w-16 bg-accent mx-auto origin-center" />
-        <p className="gsap-fade-up mt-8 text-lg text-muted-foreground max-w-xl mx-auto">
+        <div className="mt-8 h-px w-16 bg-accent mx-auto" />
+        <p className="mt-8 text-lg text-muted-foreground max-w-xl mx-auto">
           Request a business introduction to discuss your operational 
           coordination requirements.
         </p>
-        <div className="gsap-fade-up mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <Link 
             href="/contact" 
             className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-xs font-medium uppercase tracking-widest bg-foreground text-background transition-all duration-200 hover:bg-accent"

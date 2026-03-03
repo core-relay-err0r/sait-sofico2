@@ -139,30 +139,25 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
       )
     })
 
-    // Stagger groups with bidirectional animation
+    // Stagger groups animation
     gsap.utils.toArray('.gsap-stagger').forEach((container) => {
       const items = (container as Element).querySelectorAll('.gsap-stagger-item')
       
-      // Set initial state
-      gsap.set(items, { opacity: 0, y: 40 })
-      
-      // Create timeline for stagger animation
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container as Element,
-          start: 'top 85%',
-          end: 'top 20%',
-          toggleActions: 'play none none none'
+      gsap.fromTo(items,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: container as Element,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
         }
-      })
-      
-      tl.to(items, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power3.out'
-      })
+      )
     })
 
     // Counter/Number animations
