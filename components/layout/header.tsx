@@ -84,8 +84,8 @@ export function Header() {
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="absolute inset-y-0 right-0 w-full max-w-sm bg-background border-l border-border">
-            <div className="flex items-center justify-between h-20 px-6">
+          <div className="absolute inset-y-0 right-0 w-full max-w-sm bg-background border-l border-border flex flex-col h-full">
+            <div className="flex items-center justify-between h-20 px-6 flex-shrink-0">
               <span className="text-xl font-semibold tracking-wider text-foreground">
                 SOFICO
               </span>
@@ -98,7 +98,7 @@ export function Header() {
               </button>
             </div>
             
-            <nav className="px-6 py-8 space-y-6">
+            <nav className="flex-1 px-6 py-6 space-y-5 overflow-y-auto">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -109,16 +109,17 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-6 border-t border-border">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center w-full px-6 py-3 text-sm font-medium bg-foreground text-background"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Get Started
-                </Link>
-              </div>
             </nav>
+            
+            <div className="flex-shrink-0 px-6 py-6 border-t border-border">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center w-full px-6 py-4 text-sm font-medium bg-foreground text-background"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Get Started
+              </Link>
+            </div>
           </div>
         </div>
       )}
