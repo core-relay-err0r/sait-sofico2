@@ -31,10 +31,11 @@ export function HeroSection() {
         y: 30,
         duration: 0.6,
       }, '-=0.4')
-      .from('.hero-cta', {
+      .from('.hero-btn', {
         opacity: 0,
         y: 20,
-        duration: 0.6,
+        duration: 0.5,
+        stagger: 0.1,
       }, '-=0.3')
       .from('.hero-scroll', {
         opacity: 0,
@@ -50,13 +51,13 @@ export function HeroSection() {
       <div className="mx-auto max-w-4xl px-6 text-center">
         {/* Eyebrow */}
         <div className="hero-eyebrow">
-          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent border border-accent/30 px-4 py-2">
+          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent border border-accent/30 px-5 py-2.5">
             B2B Trade Services
           </span>
         </div>
         
         {/* Main Heading */}
-        <h1 className="hero-title mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-foreground leading-[1.1]">
+        <h1 className="hero-title mt-8 font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-foreground leading-[1.1]">
           Precision in Global Trade
         </h1>
         
@@ -67,18 +68,12 @@ export function HeroSection() {
         </p>
         
         {/* CTA Buttons */}
-        <div className="hero-cta mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link 
-            href="/contact" 
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground"
-          >
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link href="/contact" className="hero-btn btn-primary">
             Start a Conversation
             <ArrowRight className="h-4 w-4" />
           </Link>
-          <Link 
-            href="/about" 
-            className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
-          >
+          <Link href="/about" className="hero-btn btn-outline">
             Learn More
           </Link>
         </div>

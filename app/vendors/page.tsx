@@ -93,17 +93,11 @@ export default function VendorsPage() {
             Need Vendor Information?
           </h2>
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              href="/contact" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground"
-            >
+            <Link href="/contact" className="btn-primary">
               Request Information
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link 
-              href="/services" 
-              className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
-            >
+            <Link href="/services" className="btn-outline">
               View Our Services
             </Link>
           </div>

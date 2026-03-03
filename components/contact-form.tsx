@@ -28,7 +28,7 @@ export function ContactForm() {
           via corporate email.
         </p>
         <button
-          className="mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
+          className="mt-6 btn-outline"
           onClick={() => setIsSubmitted(false)}
         >
           Submit Another Inquiry
@@ -101,7 +101,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
+        className="btn-primary w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
       >
         {isSubmitting ? "Submitting..." : "Submit Inquiry"}
       </button>
