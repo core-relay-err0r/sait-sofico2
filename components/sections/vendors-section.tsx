@@ -9,16 +9,16 @@ export function VendorsSection() {
         <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
           Network
         </span>
-        <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-normal text-foreground">
+        <h2 className="mt-4 sm:mt-6 font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground">
           Vendor Network
         </h2>
-        <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="mt-4 sm:mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
           Reference vendors for coordination purposes.
         </p>
       </div>
       
-      <div className="mx-auto max-w-5xl px-6 mt-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="mx-auto max-w-5xl px-6 mt-10 sm:mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
           {vendorPlaceholders.slice(0, 6).map((vendor) => (
             <div 
               key={vendor.id} 

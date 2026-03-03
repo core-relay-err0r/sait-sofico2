@@ -31,13 +31,13 @@ export function ServicesSection() {
         </p>
       </div>
       
-      <div className="mx-auto max-w-6xl px-6 mt-20">
+      <div className="mx-auto max-w-6xl px-6 mt-12 sm:mt-16 lg:mt-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
           {services.map((service) => (
-            <div key={service.title} className="bg-background p-10 md:p-12 text-center">
-              <h3 className="text-xl font-serif text-foreground">{service.title}</h3>
-              <div className="mt-6 h-px w-12 bg-border mx-auto" />
-              <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
+            <div key={service.title} className="bg-background p-8 sm:p-10 md:p-12 text-center">
+              <h3 className="text-lg sm:text-xl font-serif text-foreground">{service.title}</h3>
+              <div className="mt-4 sm:mt-6 h-px w-12 bg-border mx-auto" />
+              <p className="mt-4 sm:mt-6 text-sm text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
             </div>

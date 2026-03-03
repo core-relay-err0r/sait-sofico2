@@ -23,13 +23,13 @@ export function ProcessSection() {
         </p>
       </div>
       
-      <div className="mx-auto max-w-6xl px-6 mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      <div className="mx-auto max-w-6xl px-6 mt-12 sm:mt-16 lg:mt-20">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8">
           {processSteps.map((step) => (
             <div key={step.number} className="text-center">
-              <span className="text-6xl lg:text-7xl font-serif text-accent/60">{step.number}</span>
-              <h3 className="mt-4 text-xl font-serif text-foreground">{step.title}</h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              <span className="text-5xl sm:text-6xl lg:text-7xl font-serif text-accent/60">{step.number}</span>
+              <h3 className="mt-3 sm:mt-4 text-lg sm:text-xl font-serif text-foreground">{step.title}</h3>
+              <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 {step.description}
               </p>
             </div>

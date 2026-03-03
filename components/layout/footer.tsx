@@ -117,12 +117,12 @@ export function Footer() {
         </div>
         
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-border/50">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="mt-12 lg:mt-16 pt-8 border-t border-border/50">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between md:gap-4">
             <p className="text-xs text-muted-foreground/60">
               © {new Date().getFullYear()} SoFiCo Services Limited. All rights reserved.
             </p>
-            <p className="text-xs text-muted-foreground/60">
+            <p className="text-xs text-muted-foreground/60 leading-relaxed">
               Registration: TEMP-XXXX · Not a bank. Does not provide payment services or hold client funds.
             </p>
           </div>
