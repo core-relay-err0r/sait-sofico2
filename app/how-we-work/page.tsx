@@ -1,17 +1,12 @@
-"use client"
-
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield, AlertTriangle, UserCheck, FileSearch } from "lucide-react"
-import { GSAPWrapper } from "@/components/gsap-provider"
+import { ArrowRight, Shield, AlertTriangle, UserCheck } from "lucide-react"
 
 const steps = [
   {
     step: "01",
     title: "Requirements Intake",
-    subtitle: "(Non-binding)",
-    description:
-      "Initial consultation to understand operational requirements and objectives. We gather information about your trade coordination needs and assess alignment with our service capabilities.",
+    subtitle: "Non-binding",
+    description: "Initial consultation to understand operational requirements and objectives. We gather information about your trade coordination needs.",
     details: [
       "Initial consultation and requirement gathering",
       "Assessment of coordination needs",
@@ -22,8 +17,7 @@ const steps = [
   {
     step: "02",
     title: "Vendor and Specification Alignment",
-    description:
-      "Identification and alignment of vendor capabilities with your stated requirements. This includes specification documentation and preliminary vendor coordination.",
+    description: "Identification and alignment of vendor capabilities with your stated requirements. Includes specification documentation and preliminary coordination.",
     details: [
       "Vendor identification based on requirements",
       "Specification documentation",
@@ -34,8 +28,7 @@ const steps = [
   {
     step: "03",
     title: "Documentation Sequencing",
-    description:
-      "Structured preparation and sequencing of documentation required for trade coordination. This includes workflow documentation and process structuring.",
+    description: "Structured preparation and sequencing of documentation required for trade coordination. Includes workflow documentation and process structuring.",
     details: [
       "Documentation workflow preparation",
       "Process sequencing and structuring",
@@ -46,8 +39,7 @@ const steps = [
   {
     step: "04",
     title: "Coordination Support",
-    description:
-      "Ongoing operational support throughout the coordination lifecycle. We provide coordination assistance and documentation support as required.",
+    description: "Ongoing operational support throughout the coordination lifecycle. We provide coordination assistance and documentation support as required.",
     details: [
       "Ongoing coordination assistance",
       "Documentation support",
@@ -58,161 +50,127 @@ const steps = [
 ]
 
 const complianceCheckpoints = [
-  {
-    title: "Sanctions Screening",
-    description: "Awareness of applicable sanctions regimes and screening considerations.",
-    icon: Shield,
-  },
-  {
-    title: "Export Control Awareness",
-    description: "Consideration of export control requirements and documentation needs.",
-    icon: AlertTriangle,
-  },
-  {
-    title: "End-Use Review",
-    description: "Documentation support for end-use and end-user verification processes.",
-    icon: UserCheck,
-  },
+  { title: "Sanctions Screening", description: "Awareness of applicable sanctions regimes.", icon: Shield },
+  { title: "Export Control", description: "Consideration of export control requirements.", icon: AlertTriangle },
+  { title: "End-Use Review", description: "Documentation support for verification processes.", icon: UserCheck },
 ]
 
 export default function HowWeWorkPage() {
   return (
-    <GSAPWrapper>
-      <div className="pt-20">
-        {/* Hero Section */}
-        <section className="py-24 lg:py-32">
-          <div className="container-wide">
-            <div className="max-w-3xl gsap-fade-up">
-              <span className="eyebrow">Our Process</span>
-              <h1 className="section-heading mt-6 text-balance">
-                How We Work
-              </h1>
-              <p className="section-subheading mt-8">
-                A structured approach to operational coordination. Our process is designed 
-                to provide clear, documented support throughout the trade coordination lifecycle.
-              </p>
-            </div>
-          </div>
-        </section>
+    <div className="bg-background">
+      {/* Hero Section */}
+      <section className="min-h-[60vh] flex items-center justify-center pt-24">
+        <div className="container-narrow text-center py-24 lg:py-32">
+          <span className="eyebrow gsap-fade-up">Our Process</span>
+          <h1 className="heading-display mt-8 gsap-fade-up">
+            How We Work
+          </h1>
+          <div className="divider-accent mt-10 gsap-line-grow" />
+          <p className="body-large mt-10 gsap-fade-up">
+            A structured approach to operational coordination designed 
+            for clarity and documented support.
+          </p>
+        </div>
+      </section>
 
-        {/* Process Steps */}
-        <section className="pb-24 lg:pb-32">
-          <div className="container-wide">
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-              {/* Steps */}
-              <div className="lg:col-span-8">
-                <div className="gsap-stagger-container">
-                  <div className="space-y-1">
-                    {steps.map((step) => (
-                      <div
-                        key={step.step}
-                        className="gsap-stagger-item p-8 lg:p-10 bg-card border border-border/50"
-                      >
-                        <div className="flex items-start gap-6">
-                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-primary text-primary-foreground font-semibold text-base">
-                            {step.step}
-                          </div>
-                          <div className="flex-1">
-                            <h2 className="text-xl font-semibold text-foreground">
-                              {step.title}
-                              {step.subtitle && (
-                                <span className="ml-2 text-sm font-normal text-muted-foreground">
-                                  {step.subtitle}
-                                </span>
-                              )}
-                            </h2>
-                            <p className="mt-4 text-muted-foreground leading-relaxed">
-                              {step.description}
-                            </p>
-                            <ul className="mt-6 space-y-2">
-                              {step.details.map((detail) => (
-                                <li
-                                  key={detail}
-                                  className="flex items-center gap-3 text-sm text-muted-foreground"
-                                >
-                                  <div className="h-1 w-1 rounded-full bg-foreground" />
-                                  {detail}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Compliance Checkpoints Sidebar */}
-              <div className="lg:col-span-4">
-                <div className="sticky top-28 gsap-fade-up">
-                  <div className="p-6 bg-card border border-border/50">
-                    <div className="flex items-center gap-3 mb-6">
-                      <FileSearch className="h-5 w-5 text-foreground" strokeWidth={1.5} />
-                      <h3 className="text-lg font-semibold text-foreground">
-                        Compliance Checkpoints
-                      </h3>
-                    </div>
-                    <div className="space-y-6">
-                      {complianceCheckpoints.map((checkpoint) => (
-                        <div key={checkpoint.title} className="flex items-start gap-4">
-                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-muted">
-                            <checkpoint.icon className="h-4 w-4 text-foreground" strokeWidth={1.5} />
-                          </div>
-                          <div>
-                            <h4 className="text-sm font-semibold text-foreground">
-                              {checkpoint.title}
-                            </h4>
-                            <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                              {checkpoint.description}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-8 pt-6 border-t border-border">
-                      <Button 
-                        asChild 
-                        variant="outline" 
-                        className="w-full rounded-md border-foreground/20 hover:bg-foreground/5"
-                      >
-                        <Link href="/compliance">
-                          View Compliance Info
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-24 lg:py-32 bg-card border-t border-border">
-          <div className="container-wide">
-            <div className="flex flex-col sm:flex-row gap-4 gsap-fade-up">
-              <Button asChild size="lg" className="h-12 px-8 rounded-md text-base font-medium">
-                <Link href="/contact">
-                  Start a Conversation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button 
-                asChild 
-                variant="outline" 
-                size="lg" 
-                className="h-12 px-8 rounded-md text-base font-medium border-foreground/20 hover:bg-foreground/5"
+      {/* Process Steps */}
+      <section className="section-spacing border-t border-border">
+        <div className="container-wide">
+          <div className="gsap-stagger">
+            {steps.map((step, index) => (
+              <div
+                key={step.step}
+                className={`gsap-stagger-item py-16 md:py-20 ${
+                  index !== steps.length - 1 ? "border-b border-border" : ""
+                }`}
               >
-                <Link href="/services">
-                  View Our Services
-                </Link>
-              </Button>
-            </div>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                  <div className="lg:col-span-2 text-center lg:text-left">
+                    <span className="text-6xl lg:text-7xl font-serif text-accent/60">{step.step}</span>
+                  </div>
+                  <div className="lg:col-span-4 text-center lg:text-left">
+                    <h2 className="text-2xl md:text-3xl font-serif text-foreground">
+                      {step.title}
+                    </h2>
+                    {step.subtitle && (
+                      <span className="mt-2 inline-block text-sm text-muted-foreground">
+                        ({step.subtitle})
+                      </span>
+                    )}
+                  </div>
+                  <div className="lg:col-span-3 text-center lg:text-left">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                  <div className="lg:col-span-3">
+                    <ul className="space-y-2">
+                      {step.details.map((detail) => (
+                        <li key={detail} className="text-sm text-muted-foreground/70 flex items-center gap-3">
+                          <span className="h-px w-3 bg-accent/50" />
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
-      </div>
-    </GSAPWrapper>
+        </div>
+      </section>
+
+      {/* Compliance Checkpoints */}
+      <section className="section-spacing bg-card">
+        <div className="container-medium text-center">
+          <span className="eyebrow gsap-fade-up">Compliance</span>
+          <h2 className="heading-section mt-6 gsap-fade-up">
+            Compliance Checkpoints
+          </h2>
+          <p className="body-large mt-8 gsap-fade-up">
+            Integrated compliance awareness throughout our process.
+          </p>
+        </div>
+        
+        <div className="container-wide mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border gsap-stagger">
+            {complianceCheckpoints.map((checkpoint) => (
+              <div key={checkpoint.title} className="bg-background p-10 md:p-12 text-center gsap-stagger-item">
+                <checkpoint.icon className="h-8 w-8 text-accent mx-auto" strokeWidth={1} />
+                <h3 className="mt-6 text-xl font-serif text-foreground">{checkpoint.title}</h3>
+                <p className="mt-4 text-sm text-muted-foreground">
+                  {checkpoint.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-16 text-center gsap-fade-up">
+            <Link href="/compliance" className="btn-outline">
+              View Full Compliance Info
+              <ArrowRight className="ml-3 h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-spacing border-t border-border">
+        <div className="container-narrow text-center">
+          <h2 className="heading-section gsap-fade-up">
+            Ready to Start?
+          </h2>
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 gsap-fade-up">
+            <Link href="/contact" className="btn-primary">
+              Start a Conversation
+              <ArrowRight className="ml-3 h-4 w-4" />
+            </Link>
+            <Link href="/services" className="btn-outline">
+              View Our Services
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }

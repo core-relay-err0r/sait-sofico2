@@ -1,10 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -23,93 +19,92 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="mt-8 p-6 bg-muted/50 border border-border/30">
-        <h3 className="text-lg font-semibold text-foreground">
+      <div className="mt-10 p-8 bg-muted border border-border text-center">
+        <h3 className="text-xl font-serif text-foreground">
           Inquiry Submitted
         </h3>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-4 text-sm text-muted-foreground">
           Thank you for your inquiry. We will review your submission and respond 
           via corporate email.
         </p>
-        <Button
-          variant="outline"
-          className="mt-6 rounded-md border-foreground/20 hover:bg-foreground/5"
+        <button
+          className="mt-8 btn-outline"
           onClick={() => setIsSubmitted(false)}
         >
           Submit Another Inquiry
-        </Button>
+        </button>
       </div>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-      <div className="space-y-2">
-        <Label htmlFor="companyName" className="text-sm font-medium">
+    <form onSubmit={handleSubmit} className="mt-10 space-y-8">
+      <div className="space-y-3">
+        <label htmlFor="companyName" className="text-sm font-medium text-foreground">
           Company Name
-        </Label>
-        <Input
+        </label>
+        <input
           id="companyName"
           name="companyName"
           type="text"
           required
           placeholder="Enter company name"
-          className="h-11 rounded-md border-border/50 bg-background focus-visible:ring-foreground/20"
+          className="w-full h-12 px-4 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
         />
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="contactPerson" className="text-sm font-medium">
+      <div className="space-y-3">
+        <label htmlFor="contactPerson" className="text-sm font-medium text-foreground">
           Contact Person
-        </Label>
-        <Input
+        </label>
+        <input
           id="contactPerson"
           name="contactPerson"
           type="text"
           required
           placeholder="Enter contact person name"
-          className="h-11 rounded-md border-border/50 bg-background focus-visible:ring-foreground/20"
+          className="w-full h-12 px-4 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
         />
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="email" className="text-sm font-medium">
+      <div className="space-y-3">
+        <label htmlFor="email" className="text-sm font-medium text-foreground">
           Corporate Email
-        </Label>
-        <Input
+        </label>
+        <input
           id="email"
           name="email"
           type="email"
           required
           placeholder="Enter corporate email address"
-          className="h-11 rounded-md border-border/50 bg-background focus-visible:ring-foreground/20"
+          className="w-full h-12 px-4 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
         />
         <p className="text-xs text-muted-foreground">
-          Personal email addresses (e.g., gmail.com, yahoo.com) are not accepted.
+          Personal email addresses (gmail, yahoo, etc.) are not accepted.
         </p>
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="message" className="text-sm font-medium">
+      <div className="space-y-3">
+        <label htmlFor="message" className="text-sm font-medium text-foreground">
           Message
-        </Label>
-        <Textarea
+        </label>
+        <textarea
           id="message"
           name="message"
           required
           rows={5}
           placeholder="Describe your inquiry or operational coordination requirements"
-          className="rounded-md resize-none border-border/50 bg-background focus-visible:ring-foreground/20"
+          className="w-full px-4 py-4 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors resize-none"
         />
       </div>
 
-      <Button
+      <button
         type="submit"
         disabled={isSubmitting}
-        className="h-11 px-8 rounded-md text-base font-medium"
+        className="btn-primary w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-      </Button>
+      </button>
     </form>
   )
 }

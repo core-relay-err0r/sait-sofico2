@@ -1,116 +1,137 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, createContext, useContext } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-gsap.registerPlugin(ScrollTrigger)
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
-export function useGSAP() {
-  const scope = useRef<HTMLDivElement>(null)
+const GSAPContext = createContext<boolean>(false)
+
+export function GSAPProvider({ children }: { children: React.ReactNode }) {
+  const initialized = useRef(false)
 
   useEffect(() => {
+    if (initialized.current) return
+    initialized.current = true
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     
     if (prefersReducedMotion) {
-      // Immediately show all elements without animation
-      gsap.set('.gsap-fade-up, .gsap-fade-in, .gsap-slide-right, .gsap-scale-in, .gsap-stagger-item', {
+      gsap.set('.gsap-fade-up, .gsap-fade-in, .gsap-scale-in, .gsap-slide-up, .gsap-line-grow', {
         opacity: 1,
         transform: 'none'
       })
       return
     }
 
-    const ctx = gsap.context(() => {
-      // Fade up animations
-      gsap.utils.toArray('.gsap-fade-up').forEach((el) => {
-        gsap.to(el as Element, {
+    // Fade up animations
+    gsap.utils.toArray('.gsap-fade-up').forEach((el) => {
+      gsap.to(el as Element, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el as Element,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        }
+      })
+    })
+
+    // Fade in animations
+    gsap.utils.toArray('.gsap-fade-in').forEach((el) => {
+      gsap.to(el as Element, {
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el as Element,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        }
+      })
+    })
+
+    // Scale in animations
+    gsap.utils.toArray('.gsap-scale-in').forEach((el) => {
+      gsap.to(el as Element, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el as Element,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        }
+      })
+    })
+
+    // Slide up animations
+    gsap.utils.toArray('.gsap-slide-up').forEach((el) => {
+      gsap.to(el as Element, {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el as Element,
+          start: 'top 90%',
+          toggleActions: 'play none none none'
+        }
+      })
+    })
+
+    // Line grow animations
+    gsap.utils.toArray('.gsap-line-grow').forEach((el) => {
+      gsap.to(el as Element, {
+        scaleX: 1,
+        duration: 1,
+        ease: 'power2.inOut',
+        scrollTrigger: {
+          trigger: el as Element,
+          start: 'top 90%',
+          toggleActions: 'play none none none'
+        }
+      })
+    })
+
+    // Stagger groups
+    gsap.utils.toArray('.gsap-stagger').forEach((container) => {
+      const items = (container as Element).querySelectorAll('.gsap-stagger-item')
+      gsap.fromTo(items, 
+        { opacity: 0, y: 40 },
+        {
           opacity: 1,
           y: 0,
           duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: el as Element,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-          }
-        })
-      })
-
-      // Fade in animations
-      gsap.utils.toArray('.gsap-fade-in').forEach((el) => {
-        gsap.to(el as Element, {
-          opacity: 1,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: el as Element,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-          }
-        })
-      })
-
-      // Slide right animations
-      gsap.utils.toArray('.gsap-slide-right').forEach((el) => {
-        gsap.to(el as Element, {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: el as Element,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-          }
-        })
-      })
-
-      // Scale in animations
-      gsap.utils.toArray('.gsap-scale-in').forEach((el) => {
-        gsap.to(el as Element, {
-          opacity: 1,
-          scale: 1,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: el as Element,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-          }
-        })
-      })
-
-      // Stagger animations for groups
-      gsap.utils.toArray('.gsap-stagger-container').forEach((container) => {
-        const items = (container as Element).querySelectorAll('.gsap-stagger-item')
-        gsap.to(items, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.1,
+          stagger: 0.15,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: container as Element,
-            start: 'top 80%',
+            start: 'top 85%',
             toggleActions: 'play none none none'
           }
-        })
-      })
-    }, scope)
+        }
+      )
+    })
 
-    return () => ctx.revert()
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill())
+    }
   }, [])
 
-  return scope
+  return (
+    <GSAPContext.Provider value={true}>
+      {children}
+    </GSAPContext.Provider>
+  )
 }
 
-export function GSAPWrapper({ children, className }: { children: React.ReactNode; className?: string }) {
-  const scope = useGSAP()
-  
-  return (
-    <div ref={scope} className={className}>
-      {children}
-    </div>
-  )
+export function useGSAPContext() {
+  return useContext(GSAPContext)
 }
