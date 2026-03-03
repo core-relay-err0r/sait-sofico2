@@ -118,7 +118,7 @@ export function Footer() {
         
         {/* Bottom Bar */}
         <div className="mt-12 lg:mt-16 pt-8 border-t border-border/50">
-          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between md:gap-4">
+          <div className="flex flex-col items-center text-center gap-2">
             <p className="text-xs text-muted-foreground/60">
               © {new Date().getFullYear()} SoFiCo Services Limited. All rights reserved.
             </p>
