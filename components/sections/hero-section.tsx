@@ -69,17 +69,18 @@ export function HeroSection() {
           </p>
           
           {/* CTA Buttons */}
-          <div className="hero-cta mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="hero-cta mt-8 flex items-center justify-center gap-6">
             <Link 
               href="/contact" 
-              className="inline-flex items-center justify-center gap-3 px-10 py-4 text-[13px] font-semibold uppercase tracking-[0.15em] bg-foreground text-background transition-all duration-300 hover:bg-accent hover:text-accent-foreground"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-accent"
             >
               Start a Conversation
               <ArrowRight className="h-4 w-4" />
             </Link>
+            <span className="text-border">|</span>
             <Link 
               href="/about" 
-              className="inline-flex items-center justify-center px-10 py-4 text-[13px] font-semibold uppercase tracking-[0.15em] border border-border text-foreground transition-all duration-300 hover:border-foreground hover:bg-foreground/5"
+              className="text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               Learn More
             </Link>
