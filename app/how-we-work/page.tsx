@@ -148,7 +148,10 @@ export default function HowWeWorkPage() {
           </div>
           
           <div className="mt-14 text-center">
-            <Link href="/compliance" className="btn-outline">
+            <Link 
+              href="/compliance" 
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
+            >
               View Full Compliance Info
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -163,11 +166,17 @@ export default function HowWeWorkPage() {
             Ready to Start?
           </h2>
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="btn-primary">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground"
+            >
               Start a Conversation
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href="/services" className="btn-outline">
+            <Link 
+              href="/services" 
+              className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
+            >
               View Our Services
             </Link>
           </div>

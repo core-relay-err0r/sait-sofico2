@@ -150,11 +150,17 @@ export default function CompliancePage() {
             Have Questions?
           </h2>
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="btn-primary">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground"
+            >
               Submit Inquiry
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href="/about" className="btn-outline">
+            <Link 
+              href="/about" 
+              className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
+            >
               Learn About Us
             </Link>
           </div>
