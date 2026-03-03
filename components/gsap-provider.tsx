@@ -143,53 +143,25 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
     gsap.utils.toArray('.gsap-stagger').forEach((container) => {
       const items = (container as Element).querySelectorAll('.gsap-stagger-item')
       
-      ScrollTrigger.create({
-        trigger: container as Element,
-        start: 'top 85%',
-        end: 'top 20%',
-        toggleActions: 'play reverse play reverse',
-        onEnter: () => {
-          gsap.fromTo(items, 
-            { opacity: 0, y: 40 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.6,
-              stagger: 0.1,
-              ease: 'power3.out'
-            }
-          )
-        },
-        onLeaveBack: () => {
-          gsap.to(items, {
-            opacity: 0,
-            y: 40,
-            duration: 0.4,
-            stagger: 0.05,
-            ease: 'power3.in'
-          })
-        },
-        onEnterBack: () => {
-          gsap.fromTo(items, 
-            { opacity: 0, y: -40 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.6,
-              stagger: 0.1,
-              ease: 'power3.out'
-            }
-          )
-        },
-        onLeave: () => {
-          gsap.to(items, {
-            opacity: 0,
-            y: -40,
-            duration: 0.4,
-            stagger: 0.05,
-            ease: 'power3.in'
-          })
+      // Set initial state
+      gsap.set(items, { opacity: 0, y: 40 })
+      
+      // Create timeline for stagger animation
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container as Element,
+          start: 'top 85%',
+          end: 'top 20%',
+          toggleActions: 'play reverse play reverse'
         }
+      })
+      
+      tl.to(items, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power3.out'
       })
     })
 

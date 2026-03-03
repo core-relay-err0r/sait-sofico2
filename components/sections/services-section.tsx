@@ -43,16 +43,16 @@ export function ServicesSection() {
             </div>
           ))}
         </div>
-      </div>
-      
-      <div className="gsap-fade-up mx-auto max-w-6xl px-6 mt-12 text-center">
-        <Link 
-          href="/services" 
-          className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-xs font-medium uppercase tracking-widest border border-border/60 text-foreground/80 transition-all duration-200 hover:border-foreground hover:text-foreground"
-        >
-          View All Services
-          <ArrowRight className="h-3.5 w-3.5" />
-        </Link>
+        
+        <div className="gsap-fade-up mt-12 text-center">
+          <Link 
+            href="/services" 
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-xs font-medium uppercase tracking-widest border border-border/60 text-foreground/80 transition-all duration-200 hover:border-foreground hover:text-foreground"
+          >
+            View All Services
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
       </div>
     </section>
   )
