@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ArrowRight } from "lucide-react"
+import LightPillar from "@/components/background"
 
 export function HeroSection() {
   const heroRef = useRef<HTMLElement>(null)
@@ -46,40 +47,58 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex flex-col bg-background pt-20">
+    <section ref={heroRef} className="relative min-h-screen flex flex-col bg-[#0B1F3B] pt-20 overflow-hidden">
+      {/* LightPillar Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <LightPillar
+          topColor="#1D4ED8"
+          bottomColor="#0B1F3B"
+          intensity={1}
+          rotationSpeed={0.3}
+          glowAmount={0.003}
+          pillarWidth={3}
+          pillarHeight={0.4}
+          noiseIntensity={0.4}
+          pillarRotation={25}
+          interactive={false}
+          mixBlendMode="screen"
+          quality="high"
+        />
+      </div>
+      
       {/* Main content - centered with padding for scroll indicator */}
-      <div className="flex-1 flex items-center justify-center pb-24 pt-8">
+      <div className="relative z-10 flex-1 flex items-center justify-center pb-24 pt-8">
         <div className="mx-auto max-w-4xl px-6 text-center">
           {/* Eyebrow */}
           <div className="hero-eyebrow">
-            <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent border border-accent/30 px-4 py-2">
+            <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-white/80 border border-white/20 px-4 py-2 backdrop-blur-sm">
               B2B Trade Services
             </span>
           </div>
           
           {/* Main Heading */}
-          <h1 className="hero-title mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-foreground leading-[1.1]">
+          <h1 className="hero-title mt-8 font-serif text-4xl sm:text-5xl lg:text-7xl font-normal text-white leading-[1.1]">
             Precision in Global Trade
           </h1>
           
           {/* Description */}
-          <p className="hero-description mt-5 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="hero-description mt-6 text-base sm:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
             Operational coordination and structured support for enterprises engaged in international commerce. 
             We bridge the gap between complex trade requirements and seamless execution.
           </p>
           
           {/* CTA Buttons */}
-          <div className="hero-cta mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full px-4 sm:px-0">
+          <div className="hero-cta mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full px-4 sm:px-0">
             <Link 
               href="/contact" 
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-2.5 text-xs font-medium uppercase tracking-widest bg-primary text-primary-foreground transition-all duration-200 hover:bg-accent"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-3 text-xs font-medium uppercase tracking-widest bg-white text-[#0B1F3B] transition-all duration-200 hover:bg-[#1D4ED8] hover:text-white"
             >
               Get Started
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             <Link 
               href="/about" 
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 sm:py-2.5 text-xs font-medium uppercase tracking-widest border border-border text-foreground transition-all duration-200 hover:border-primary hover:bg-muted"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 sm:py-3 text-xs font-medium uppercase tracking-widest border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white/10"
             >
               Learn More
             </Link>
@@ -88,8 +107,8 @@ export function HeroSection() {
       </div>
       
       {/* Scroll Indicator - fixed at bottom */}
-      <div className="hero-scroll absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center">
-        <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/50">
+      <div className="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center z-10">
+        <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">
           Scroll
         </span>
       </div>
