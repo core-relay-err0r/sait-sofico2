@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Lock, Package, Settings, FileText } from "lucide-react"
+// Admin Dashboard
 import { Container } from "@/components/container"
 import { catalogItems } from "@/content/catalog"
 
