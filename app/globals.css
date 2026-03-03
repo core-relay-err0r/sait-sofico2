@@ -46,24 +46,24 @@
 }
 
 :root {
-  /* Dark Navy Enterprise Theme */
-  --background: #0B1F3B;
+  /* Pure Black Enterprise Theme */
+  --background: #000000;
   --foreground: #FFFFFF;
-  --card: #0F2847;
+  --card: #0A0A0A;
   --card-foreground: #FFFFFF;
-  --popover: #0F2847;
+  --popover: #0A0A0A;
   --popover-foreground: #FFFFFF;
   --primary: #FFFFFF;
-  --primary-foreground: #0B1F3B;
-  --secondary: #1A3A5C;
+  --primary-foreground: #000000;
+  --secondary: #111111;
   --secondary-foreground: #FFFFFF;
-  --muted: #0F2847;
+  --muted: #0A0A0A;
   --muted-foreground: rgba(255, 255, 255, 0.6);
   --accent: #3B82F6;
   --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
-  --border: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.12);
   --input: rgba(255, 255, 255, 0.1);
   --ring: #3B82F6;
   --chart-1: #3B82F6;
@@ -72,7 +72,7 @@
   --chart-4: #93C5FD;
   --chart-5: #BFDBFE;
   --radius: 0.25rem;
-  --sidebar: #0F2847;
+  --sidebar: #0A0A0A;
   --sidebar-foreground: #FFFFFF;
   --sidebar-primary: #3B82F6;
   --sidebar-primary-foreground: #FFFFFF;
@@ -221,7 +221,7 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B1F3B;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);

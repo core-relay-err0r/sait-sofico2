@@ -47,12 +47,12 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section ref={heroRef} className="relative h-screen flex flex-col bg-[#0B1F3B] overflow-hidden">
+    <section ref={heroRef} className="relative h-screen flex flex-col bg-black overflow-hidden">
       {/* LightPillar Background */}
       <div className="absolute inset-0 w-full h-full z-0">
         <LightPillar
-          topColor="#1D4ED8"
-          bottomColor="#0B1F3B"
+          topColor="#3B82F6"
+          bottomColor="#000000"
           intensity={1}
           rotationSpeed={0.8}
           glowAmount={0.003}
@@ -91,7 +91,7 @@ export function HeroSection() {
           <div className="hero-cta mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full px-4 sm:px-0">
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-3 text-xs font-medium uppercase tracking-widest bg-white text-[#0B1F3B] transition-all duration-200 hover:bg-[#1D4ED8] hover:text-white"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-3 text-xs font-medium uppercase tracking-widest bg-white text-black transition-all duration-200 hover:bg-accent hover:text-white"
             >
               Get Started
               <ArrowRight className="h-3.5 w-3.5" />
