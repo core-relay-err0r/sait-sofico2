@@ -67,7 +67,7 @@ export function HeroSection() {
       </div>
 
       {/* Main content - centered with padding for header and scroll indicator */}
-      <div className="relative z-10 flex-1 flex items-center justify-center pt-24 pb-20">
+      <div className="relative z-10 flex-1 flex items-center justify-center pt-20 pb-28">
         <div className="mx-auto max-w-4xl px-6 text-center">
           {/* Eyebrow */}
           <div className="hero-eyebrow">
@@ -106,12 +106,12 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll Indicator - fixed at bottom */}
-      <div className="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10">
-        <span className="text-[10px] uppercase tracking-[0.2em] text-white/50">
+      {/* Scroll Indicator - anchored at bottom of viewport */}
+      <div className="hero-scroll absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+        <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-medium">
           Scroll
         </span>
-        <div className="w-px h-6 bg-gradient-to-b from-white/40 to-transparent" />
+        <div className="w-px h-8 bg-gradient-to-b from-white/30 to-transparent animate-pulse" />
       </div>
     </section>
   )
