@@ -46,45 +46,45 @@
 }
 
 :root {
-  /* Light Enterprise Theme */
-  --background: #FFFFFF;
-  --foreground: #111827;
-  --card: #F5F7FA;
-  --card-foreground: #111827;
-  --popover: #FFFFFF;
-  --popover-foreground: #111827;
-  --primary: #0B1F3B;
-  --primary-foreground: #FFFFFF;
-  --secondary: #2B2F36;
+  /* Dark Navy Enterprise Theme */
+  --background: #0B1F3B;
+  --foreground: #FFFFFF;
+  --card: #0F2847;
+  --card-foreground: #FFFFFF;
+  --popover: #0F2847;
+  --popover-foreground: #FFFFFF;
+  --primary: #FFFFFF;
+  --primary-foreground: #0B1F3B;
+  --secondary: #1A3A5C;
   --secondary-foreground: #FFFFFF;
-  --muted: #F5F7FA;
-  --muted-foreground: #6B7280;
-  --accent: #1D4ED8;
+  --muted: #0F2847;
+  --muted-foreground: rgba(255, 255, 255, 0.6);
+  --accent: #3B82F6;
   --accent-foreground: #FFFFFF;
-  --destructive: #DC2626;
+  --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
-  --border: #E5E7EB;
-  --input: #E5E7EB;
-  --ring: #1D4ED8;
-  --chart-1: #1D4ED8;
-  --chart-2: #0B1F3B;
-  --chart-3: #2B2F36;
-  --chart-4: #6B7280;
-  --chart-5: #E5E7EB;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #3B82F6;
+  --chart-1: #3B82F6;
+  --chart-2: #1D4ED8;
+  --chart-3: #60A5FA;
+  --chart-4: #93C5FD;
+  --chart-5: #BFDBFE;
   --radius: 0.25rem;
-  --sidebar: #F5F7FA;
-  --sidebar-foreground: #111827;
-  --sidebar-primary: #1D4ED8;
+  --sidebar: #0F2847;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #3B82F6;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E5E7EB;
-  --sidebar-accent-foreground: #111827;
-  --sidebar-border: #E5E7EB;
-  --sidebar-ring: #1D4ED8;
+  --sidebar-accent: rgba(255, 255, 255, 0.1);
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #3B82F6;
   
   /* Additional semantic colors */
-  --success: #16A34A;
+  --success: #22C55E;
   --warning: #F59E0B;
-  --error: #DC2626;
+  --error: #EF4444;
 }
 
 @layer base {
@@ -171,11 +171,11 @@
   
   /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-primary text-primary-foreground transition-all duration-200 hover:bg-accent;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-primary text-primary-foreground transition-all duration-200 hover:bg-accent hover:text-accent-foreground;
   }
   
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-primary hover:bg-muted;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-accent hover:bg-white/5;
   }
   
   .btn-ghost {
@@ -212,7 +212,7 @@
 
 /* Custom Selection */
 ::selection {
-  background: #1D4ED8;
+  background: #3B82F6;
   color: #FFFFFF;
 }
 
@@ -221,11 +221,11 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F7FA;
+  background: #0B1F3B;
 }
 ::-webkit-scrollbar-thumb {
-  background: #E5E7EB;
+  background: rgba(255, 255, 255, 0.2);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6B7280;
+  background: rgba(255, 255, 255, 0.4);
 }
