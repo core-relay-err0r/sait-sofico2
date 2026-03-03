@@ -56,7 +56,7 @@ export function HeroSection() {
           intensity={1}
           rotationSpeed={0.8}
           glowAmount={0.003}
-          pillarWidth={3}
+          pillarWidth={5}
           pillarHeight={0.4}
           noiseIntensity={0.4}
           pillarRotation={25}
