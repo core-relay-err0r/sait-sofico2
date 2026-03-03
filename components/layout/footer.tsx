@@ -1,58 +1,130 @@
 import Link from "next/link"
 
-const navigation = [
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Process", href: "/how-we-work" },
-  { name: "Vendors", href: "/vendors" },
-  { name: "Compliance", href: "/compliance" },
-  { name: "Contact", href: "/contact" },
-]
+const footerLinks = {
+  services: {
+    title: "Services",
+    links: [
+      { name: "Operational Coordination", href: "/services#operational" },
+      { name: "Supplier Alignment", href: "/services#supplier" },
+      { name: "Documentation Support", href: "/services#documentation" },
+    ]
+  },
+  company: {
+    title: "Company",
+    links: [
+      { name: "About Us", href: "/about" },
+      { name: "How We Work", href: "/how-we-work" },
+      { name: "Vendor Network", href: "/vendors" },
+      { name: "Contact", href: "/contact" },
+    ]
+  },
+  legal: {
+    title: "Legal",
+    links: [
+      { name: "Compliance", href: "/compliance" },
+      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Terms of Service", href: "/terms" },
+    ]
+  }
+}
 
 export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        {/* Main Footer Content */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12">
-          {/* Left: Logo */}
-          <div className="flex-shrink-0">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+          {/* Brand Column */}
+          <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
-              <span className="text-xl font-semibold tracking-[0.2em] text-foreground">
+              <span className="text-2xl font-semibold tracking-[0.15em] text-foreground">
                 SOFICO
               </span>
             </Link>
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-sm">
+              Operational coordination and structured support for enterprises engaged in international commerce.
+            </p>
+            <div className="mt-6 space-y-2">
+              <p className="text-sm text-muted-foreground">
+                <span className="text-foreground/70">Email:</span>{" "}
+                <a href="mailto:info@sofico.hk" className="text-accent hover:text-accent/80 transition-colors">
+                  info@sofico.hk
+                </a>
+              </p>
+              <p className="text-sm text-muted-foreground">
+                <span className="text-foreground/70">Location:</span>{" "}
+                Hong Kong
+              </p>
+            </div>
           </div>
           
-          {/* Center: Navigation Links */}
-          <nav className="flex flex-wrap gap-x-8 gap-y-3">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          {/* Services Column */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              {footerLinks.services.title}
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {footerLinks.services.links.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
           
-          {/* Right: Contact Email */}
-          <div className="flex-shrink-0">
-            <a 
-              href="mailto:info@sofico.hk" 
-              className="text-sm text-accent hover:text-accent/80 transition-colors"
-            >
-              info@sofico.hk
-            </a>
+          {/* Company Column */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              {footerLinks.company.title}
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {footerLinks.company.links.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Legal Column */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              {footerLinks.legal.title}
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {footerLinks.legal.links.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         
-        {/* Bottom Section */}
+        {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-border/50">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-muted-foreground/60">
-            <p>© {new Date().getFullYear()} SoFiCo Services Limited. All rights reserved.</p>
-            <p>Hong Kong · Registration: TEMP-XXXX · Not a bank. Does not hold client funds.</p>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <p className="text-xs text-muted-foreground/60">
+              © {new Date().getFullYear()} SoFiCo Services Limited. All rights reserved.
+            </p>
+            <p className="text-xs text-muted-foreground/60">
+              Registration: TEMP-XXXX · Not a bank. Does not provide payment services or hold client funds.
+            </p>
           </div>
         </div>
       </div>
