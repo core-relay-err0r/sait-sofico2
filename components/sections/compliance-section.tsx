@@ -3,7 +3,7 @@ import { ArrowRight, Shield } from "lucide-react"
 
 export function ComplianceSection() {
   return (
-    <section className="py-24 lg:py-32 border-t border-border">
+    <section className="pt-20 pb-16 border-t border-border">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <div className="gsap-scale-in">
           <Shield className="h-12 w-12 text-accent mx-auto" strokeWidth={1} />

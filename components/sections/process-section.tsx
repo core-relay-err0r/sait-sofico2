@@ -10,7 +10,7 @@ const processSteps = [
 
 export function ProcessSection() {
   return (
-    <section className="py-24 lg:py-32 bg-card">
+    <section className="pt-20 pb-16 bg-card">
       <div className="mx-auto max-w-5xl px-6 text-center">
         <span className="gsap-fade-up inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
           Our Approach

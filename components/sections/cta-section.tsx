@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react"
 
 export function CTASection() {
   return (
-    <section className="py-24 lg:py-32 border-t border-border">
+    <section className="pt-20 pb-16 border-t border-border">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <span className="gsap-fade-up inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
           Get Started
