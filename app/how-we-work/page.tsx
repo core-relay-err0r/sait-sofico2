@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Shield, AlertTriangle, UserCheck } from "lucide-react"
+import { ArrowRight, Shield, AlertTriangle, UserCheck, Check } from "lucide-react"
 
 const steps = [
   {
@@ -75,41 +75,50 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
-      {/* Process Steps */}
-      <section className="py-16 lg:py-20 border-t border-border">
-        <div className="mx-auto max-w-4xl px-6">
-          {steps.map((step, index) => (
-            <div
-              key={step.step}
-              className={`py-16 md:py-20 ${
-                index !== steps.length - 1 ? "border-b border-border" : ""
-              }`}
-            >
-              <div className="text-center">
-                <span className="text-5xl lg:text-6xl font-serif text-accent/60">{step.step}</span>
-                <h2 className="mt-4 text-2xl md:text-3xl font-serif text-foreground">
+      {/* Process Steps - New Card Layout */}
+      <section className="py-16 lg:py-24 border-t border-border">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {steps.map((step) => (
+              <div
+                key={step.step}
+                className="group relative bg-card border border-border p-8 md:p-10 transition-all duration-300 hover:border-accent/30"
+              >
+                {/* Step Number Badge */}
+                <div className="flex items-start justify-between mb-6">
+                  <span className="text-4xl font-serif text-accent">{step.step}</span>
+                  {step.subtitle && (
+                    <span className="text-[10px] uppercase tracking-wider text-muted-foreground border border-border px-2 py-1">
+                      {step.subtitle}
+                    </span>
+                  )}
+                </div>
+                
+                {/* Title */}
+                <h2 className="text-xl md:text-2xl font-serif text-foreground mb-4">
                   {step.title}
                 </h2>
-                {step.subtitle && (
-                  <span className="mt-2 inline-block text-sm text-muted-foreground">
-                    ({step.subtitle})
-                  </span>
-                )}
-                <p className="mt-6 text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                
+                {/* Description */}
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                   {step.description}
                 </p>
-                <ul className="mt-8 inline-flex flex-col items-center gap-3">
+                
+                {/* Divider */}
+                <div className="h-px w-full bg-border mb-6" />
+                
+                {/* Details List */}
+                <ul className="space-y-3">
                   {step.details.map((detail) => (
-                    <li key={detail} className="text-sm text-muted-foreground/70 flex items-center gap-3">
-                      <span className="h-px w-4 bg-accent/50" />
-                      {detail}
-                      <span className="h-px w-4 bg-accent/50" />
+                    <li key={detail} className="flex items-start gap-3 text-sm text-muted-foreground/80">
+                      <Check className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span>{detail}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
