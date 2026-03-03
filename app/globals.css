@@ -194,34 +194,9 @@
     @apply text-foreground transition-colors duration-300 hover:text-accent;
   }
   
-  /* GSAP Animation States */
-  .gsap-fade-up {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-  
-  .gsap-fade-in {
-    opacity: 0;
-  }
-  
-  .gsap-scale-in {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  
-  .gsap-slide-up {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  
+  /* GSAP Animation Classes - initial states set by JS for better reliability */
   .gsap-line-grow {
-    transform: scaleX(0);
     transform-origin: center;
-  }
-  
-  .gsap-char {
-    opacity: 0;
-    transform: translateY(100%);
   }
 }
 
