@@ -16,12 +16,11 @@ export default function VendorsPage() {
               Network
             </span>
             <h1 className="mt-6 sm:mt-8 font-serif text-4xl sm:text-5xl lg:text-7xl font-normal text-foreground leading-[1.1]">
-              Vendor Network
+              Technology Partners
             </h1>
             <div className="mt-6 sm:mt-8 h-px w-16 bg-accent mx-auto" />
             <p className="mt-6 sm:mt-8 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Reference vendors for coordination purposes. Our vendor coordination 
-              services help align supplier capabilities with operational requirements.
+              Hardware and technology brands we coordinate with for B2B trade operations.
             </p>
           </div>
         </ScrollAnimation>
@@ -51,9 +50,8 @@ export default function VendorsPage() {
           <ScrollAnimation animation="fade-in" delay={400}>
             <div className="mt-10 sm:mt-14 p-6 sm:p-8 md:p-10 bg-card border border-border text-center">
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Vendor list shown for reference purposes only. No authorization or partnership 
-                is implied. The inclusion of any vendor in this list does not constitute an 
-                endorsement, recommendation, or representation of any commercial relationship.
+                Technology partners listed for coordination reference only. 
+                No commercial relationship or endorsement is implied.
               </p>
             </div>
           </ScrollAnimation>

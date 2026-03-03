@@ -44,7 +44,7 @@ export function VendorsSection() {
         
         <ScrollAnimation animation="fade-in" delay={700}>
           <p className="mt-10 text-xs text-muted-foreground/60 text-center">
-            Vendor list shown for reference purposes only. No authorization or partnership is implied.
+            Technology partners for coordination purposes only.
           </p>
         </ScrollAnimation>
         
