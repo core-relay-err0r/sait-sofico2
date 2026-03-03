@@ -10,20 +10,18 @@ export function VendorGrid({ dense }: Props) {
       className={
         dense
           ? "grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6"
-          : "grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4"
+          : "grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
       }
     >
       {vendorPlaceholders.map((vendor) => (
         <div
           key={vendor.id}
-          className={
-            dense
-              ? "flex h-20 items-center justify-center rounded-lg border border-border bg-card transition-colors hover:border-border/80"
-              : "flex h-28 items-center justify-center rounded-lg border border-border bg-card transition-colors hover:border-border/80"
-          }
+          className={`group border border-border/50 bg-foreground/5 flex items-center justify-center transition-all duration-300 hover:border-accent/50 hover:bg-foreground/10 ${
+            dense ? "h-20" : "h-24"
+          }`}
         >
           <div
-            className="h-8 w-24 rounded bg-muted"
+            className="h-6 w-20 rounded bg-foreground/20 group-hover:bg-foreground/30 transition-colors"
             aria-label={vendor.name}
           />
         </div>

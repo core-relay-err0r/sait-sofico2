@@ -17,14 +17,14 @@ export function VendorsSection() {
         </p>
       </div>
       
-      <div className="mx-auto max-w-6xl px-6 mt-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-border">
+      <div className="mx-auto max-w-5xl px-6 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {vendorPlaceholders.slice(0, 6).map((vendor) => (
             <div 
               key={vendor.id} 
-              className="bg-background aspect-[2/1] flex items-center justify-center"
+              className="group border border-border/50 bg-foreground/5 aspect-[2.5/1] flex items-center justify-center transition-all duration-300 hover:border-accent/50 hover:bg-foreground/10"
             >
-              <div className="h-5 w-16 rounded-sm bg-muted" aria-label={vendor.name} />
+              <div className="h-6 w-20 rounded bg-foreground/20 group-hover:bg-foreground/30 transition-colors" aria-label={vendor.name} />
             </div>
           ))}
         </div>
