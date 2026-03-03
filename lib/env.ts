@@ -1,7 +1,7 @@
 export type DeployEnv = "preview" | "production"
 
 export function getDeployEnv(): DeployEnv {
-  const raw = process.env.NEXT_PUBLIC_DEPLOY_ENV
+  const raw = process.env.NEXT_PUBLIC_SITE_ENV || process.env.NEXT_PUBLIC_DEPLOY_ENV
   return raw === "production" ? "production" : "preview"
 }
 

@@ -1,20 +1,87 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
+
+declare global {
+  interface Window {
+    hcaptcha?: {
+      render: (container: string | HTMLElement, options: Record<string, unknown>) => string
+      getResponse: (widgetId: string) => string
+      reset: (widgetId: string) => void
+    }
+    onHCaptchaLoad?: () => void
+  }
+}
+
+const HCAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState("")
+  const [captchaToken, setCaptchaToken] = useState("")
+  const captchaRef = useRef<HTMLDivElement>(null)
+  const widgetIdRef = useRef<string | null>(null)
+
+  useEffect(() => {
+    if (!HCAPTCHA_SITE_KEY || !captchaRef.current) return
+
+    const renderCaptcha = () => {
+      if (window.hcaptcha && captchaRef.current && widgetIdRef.current === null) {
+        widgetIdRef.current = window.hcaptcha.render(captchaRef.current, {
+          sitekey: HCAPTCHA_SITE_KEY,
+          callback: (token: string) => setCaptchaToken(token),
+          "expired-callback": () => setCaptchaToken(""),
+          theme: "dark",
+        })
+      }
+    }
+
+    if (window.hcaptcha) {
+      renderCaptcha()
+    } else {
+      window.onHCaptchaLoad = renderCaptcha
+      const script = document.createElement("script")
+      script.src = "https://js.hcaptcha.com/1/api.js?onload=onHCaptchaLoad&render=explicit"
+      script.async = true
+      document.head.appendChild(script)
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    setError("")
+
+    const formData = new FormData(e.currentTarget)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          companyName: formData.get("companyName"),
+          contactPerson: formData.get("contactPerson"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+          captchaToken,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        setError(data.error || "Submission failed. Please try again.")
+        setIsSubmitting(false)
+        return
+      }
+
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+    } catch {
+      setError("An error occurred. Please try again.")
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
@@ -29,7 +96,11 @@ export function ContactForm() {
         </p>
         <button
           className="mt-6 inline-flex items-center justify-center px-8 py-3.5 text-xs font-medium uppercase tracking-widest border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white/10"
-          onClick={() => setIsSubmitted(false)}
+          onClick={() => {
+            setIsSubmitted(false)
+            setCaptchaToken("")
+            widgetIdRef.current = null
+          }}
         >
           Submit Another Inquiry
         </button>
@@ -97,6 +168,16 @@ export function ContactForm() {
           className="w-full px-4 py-4 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors resize-none"
         />
       </div>
+
+      {HCAPTCHA_SITE_KEY && (
+        <div className="flex justify-center">
+          <div ref={captchaRef} />
+        </div>
+      )}
+
+      {error && (
+        <p className="text-sm text-red-500 text-center">{error}</p>
+      )}
 
       <div className="pt-4">
         <button

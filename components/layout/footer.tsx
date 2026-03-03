@@ -23,7 +23,8 @@ const footerLinks = {
     links: [
       { name: "Compliance", href: "/compliance" },
       { name: "Privacy Policy", href: "/privacy-policy" },
-      { name: "Terms of Service", href: "/terms-of-use" },
+      { name: "Terms of Use", href: "/terms-of-use" },
+      { name: "Cookie Policy", href: "/cookie-policy" },
     ]
   }
 }
