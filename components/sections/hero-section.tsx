@@ -67,8 +67,8 @@ export function HeroSection() {
       </div>
 
       {/* Main content - centered with padding for header and scroll indicator */}
-      <div className="relative z-10 flex-1 flex items-center justify-center pt-20 pb-24">
-        <div className="mx-auto max-w-4xl px-6 text-center -mt-8">
+      <div className="relative z-10 flex-1 flex items-center justify-center pt-24 pb-20">
+        <div className="mx-auto max-w-4xl px-6 text-center">
           {/* Eyebrow */}
           <div className="hero-eyebrow">
             <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-white/80 border border-white/20 px-4 py-2 backdrop-blur-sm">
@@ -77,7 +77,7 @@ export function HeroSection() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="hero-title mt-8 font-serif text-4xl sm:text-5xl lg:text-7xl font-normal text-white leading-[1.1]">
+          <h1 className="hero-title mt-6 font-serif text-4xl sm:text-5xl lg:text-7xl font-normal text-white leading-[1.1]">
             Precision in Global Trade
           </h1>
 
@@ -88,7 +88,7 @@ export function HeroSection() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="hero-cta mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full px-4 sm:px-0">
+          <div className="hero-cta mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full px-4 sm:px-0">
             <Link
               href="/contact"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-3 text-xs font-medium uppercase tracking-widest bg-white text-[#0B1F3B] transition-all duration-200 hover:bg-[#1D4ED8] hover:text-white"
