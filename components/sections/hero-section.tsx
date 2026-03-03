@@ -46,9 +46,9 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section ref={heroRef} className="relative h-screen flex flex-col bg-background">
+    <section ref={heroRef} className="relative min-h-screen flex flex-col bg-background pt-20">
       {/* Main content - centered with padding for scroll indicator */}
-      <div className="flex-1 flex items-center justify-center pb-24">
+      <div className="flex-1 flex items-center justify-center pb-24 pt-8">
         <div className="mx-auto max-w-4xl px-6 text-center">
           {/* Eyebrow */}
           <div className="hero-eyebrow">
