@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import { ArrowRight, Shield, AlertTriangle, UserCheck, Check } from "lucide-react"
+import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/scroll-animation"
 
 const steps = [
   {
@@ -59,30 +62,33 @@ export default function HowWeWorkPage() {
   return (
     <div className="bg-background pt-20">
       {/* Hero Section */}
-      <section className="py-24 lg:py-32">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
-            Our Process
-          </span>
-          <h1 className="mt-8 font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-foreground leading-[1.1]">
-            How We Work
-          </h1>
-          <div className="mt-8 h-px w-16 bg-accent mx-auto" />
-          <p className="mt-8 text-lg text-muted-foreground max-w-2xl mx-auto">
-            A structured approach to operational coordination designed 
-            for clarity and documented support.
-          </p>
-        </div>
+      <section className="py-20 lg:py-32">
+        <ScrollAnimation animation="fade-up">
+          <div className="mx-auto max-w-3xl px-6 text-center">
+            <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
+              Our Process
+            </span>
+            <h1 className="mt-6 sm:mt-8 font-serif text-4xl sm:text-5xl lg:text-7xl font-normal text-foreground leading-[1.1]">
+              How We Work
+            </h1>
+            <div className="mt-6 sm:mt-8 h-px w-16 bg-accent mx-auto" />
+            <p className="mt-6 sm:mt-8 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+              A structured approach to operational coordination designed 
+              for clarity and documented support.
+            </p>
+          </div>
+        </ScrollAnimation>
       </section>
 
       {/* Process Steps - New Card Layout */}
-      <section className="py-16 lg:py-24 border-t border-border">
+      <section className="py-12 lg:py-24 border-t border-border">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {steps.map((step) => (
-              <div
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            {steps.map((step, index) => (
+              <StaggerItem
                 key={step.step}
-                className="group relative bg-card border border-border p-8 md:p-10 transition-all duration-300 hover:border-accent/30"
+                index={index}
+                className="group relative bg-card border border-border p-6 sm:p-8 md:p-10 transition-all duration-300 hover:border-accent/30"
               >
                 {/* Step Number Badge */}
                 <div className="flex items-start justify-between mb-6">
@@ -116,74 +122,78 @@ export default function HowWeWorkPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Compliance Checkpoints */}
-      <section className="py-24 lg:py-32 bg-card">
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
-            Compliance
-          </span>
-          <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-normal text-foreground">
-            Compliance Checkpoints
-          </h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Integrated compliance awareness throughout our process.
-          </p>
-        </div>
+      <section className="py-16 lg:py-32 bg-card">
+        <ScrollAnimation animation="fade-up">
+          <div className="mx-auto max-w-5xl px-6 text-center">
+            <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
+              Compliance
+            </span>
+            <h2 className="mt-4 sm:mt-6 font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground">
+              Compliance Checkpoints
+            </h2>
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+              Integrated compliance awareness throughout our process.
+            </p>
+          </div>
+        </ScrollAnimation>
         
-        <div className="mx-auto max-w-6xl px-6 mt-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
-            {complianceCheckpoints.map((checkpoint) => (
-              <div key={checkpoint.title} className="bg-background p-10 md:p-12 text-center">
-                <checkpoint.icon className="h-8 w-8 text-accent mx-auto" strokeWidth={1} />
-                <h3 className="mt-6 text-xl font-serif text-foreground">{checkpoint.title}</h3>
-                <p className="mt-4 text-sm text-muted-foreground">
+        <div className="mx-auto max-w-6xl px-6 mt-10 sm:mt-16">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            {complianceCheckpoints.map((checkpoint, index) => (
+              <StaggerItem key={checkpoint.title} index={index} className="bg-background border border-border p-8 sm:p-10 md:p-12 text-center">
+                <checkpoint.icon className="h-6 w-6 sm:h-8 sm:w-8 text-accent mx-auto" strokeWidth={1} />
+                <h3 className="mt-4 sm:mt-6 text-lg sm:text-xl font-serif text-foreground">{checkpoint.title}</h3>
+                <p className="mt-3 sm:mt-4 text-sm text-muted-foreground">
                   {checkpoint.description}
                 </p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
           
-          <div className="mt-14 text-center">
+          <ScrollAnimation animation="fade-up" delay={400} className="mt-10 sm:mt-14 text-center">
             <Link 
               href="/compliance" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-medium uppercase tracking-widest border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white/10"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-medium uppercase tracking-widest border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white/10"
             >
               View Full Compliance Info
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
-          </div>
+          </ScrollAnimation>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 lg:py-32 border-t border-border">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="font-serif text-4xl sm:text-5xl font-normal text-foreground">
-            Ready to Start?
-          </h2>
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              href="/contact" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-medium uppercase tracking-widest bg-white text-black transition-all duration-200 hover:bg-accent hover:text-white"
-            >
-              Start a Conversation
-              <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-            <Link 
-              href="/services" 
-              className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-medium uppercase tracking-widest border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white/10"
-            >
-              View Our Services
-            </Link>
+      <ScrollAnimation animation="fade-up">
+        <section className="py-16 lg:py-32 border-t border-border">
+          <div className="mx-auto max-w-3xl px-6 text-center">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground">
+              Ready to Start?
+            </h2>
+            <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <Link 
+                href="/contact" 
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-medium uppercase tracking-widest bg-white text-black transition-all duration-200 hover:bg-accent hover:text-white"
+              >
+                Start a Conversation
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+              <Link 
+                href="/services" 
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-medium uppercase tracking-widest border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white/10"
+              >
+                View Our Services
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
     </div>
   )
 }

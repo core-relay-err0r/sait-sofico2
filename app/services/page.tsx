@@ -118,17 +118,17 @@ export default function ServicesPage() {
             <h2 className="font-serif text-4xl sm:text-5xl font-normal text-foreground">
               Ready to Get Started?
             </h2>
-            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <Link 
                 href="/contact" 
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-medium uppercase tracking-widest bg-white text-black transition-all duration-200 hover:bg-accent hover:text-white"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-medium uppercase tracking-widest bg-white text-black transition-all duration-200 hover:bg-accent hover:text-white"
               >
                 Request Introduction
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
               <Link 
                 href="/how-we-work" 
-                className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-medium uppercase tracking-widest border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white/10"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-medium uppercase tracking-widest border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white/10"
               >
                 Learn Our Process
               </Link>
