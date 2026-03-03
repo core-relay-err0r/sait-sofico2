@@ -19,7 +19,7 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="mt-10 p-8 bg-muted border border-border text-center">
+      <div className="mt-8 p-8 bg-muted border border-border text-center">
         <h3 className="text-xl font-serif text-foreground">
           Inquiry Submitted
         </h3>
@@ -28,7 +28,7 @@ export function ContactForm() {
           via corporate email.
         </p>
         <button
-          className="mt-8 btn-outline"
+          className="mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
           onClick={() => setIsSubmitted(false)}
         >
           Submit Another Inquiry
@@ -38,8 +38,8 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-10 space-y-8">
-      <div className="space-y-3">
+    <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+      <div className="space-y-2">
         <label htmlFor="companyName" className="text-sm font-medium text-foreground">
           Company Name
         </label>
@@ -53,7 +53,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-2">
         <label htmlFor="contactPerson" className="text-sm font-medium text-foreground">
           Contact Person
         </label>
@@ -67,7 +67,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-2">
         <label htmlFor="email" className="text-sm font-medium text-foreground">
           Corporate Email
         </label>
@@ -84,7 +84,7 @@ export function ContactForm() {
         </p>
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium text-foreground">
           Message
         </label>
@@ -101,7 +101,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="btn-primary w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+        className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
       >
         {isSubmitting ? "Submitting..." : "Submit Inquiry"}
       </button>

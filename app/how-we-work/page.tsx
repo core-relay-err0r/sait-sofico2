@@ -57,16 +57,18 @@ const complianceCheckpoints = [
 
 export default function HowWeWorkPage() {
   return (
-    <div className="bg-background">
+    <div className="bg-background pt-20">
       {/* Hero Section */}
-      <section className="min-h-[60vh] flex items-center justify-center pt-24">
-        <div className="container-narrow text-center py-24 lg:py-32">
-          <span className="eyebrow gsap-fade-up">Our Process</span>
-          <h1 className="heading-display mt-8 gsap-fade-up">
+      <section className="py-24 lg:py-32">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
+            Our Process
+          </span>
+          <h1 className="mt-8 font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-foreground leading-[1.1]">
             How We Work
           </h1>
-          <div className="divider-accent mt-10 gsap-line-grow" />
-          <p className="body-large mt-10 gsap-fade-up">
+          <div className="mt-8 h-px w-16 bg-accent mx-auto" />
+          <p className="mt-8 text-lg text-muted-foreground max-w-2xl mx-auto">
             A structured approach to operational coordination designed 
             for clarity and documented support.
           </p>
@@ -74,68 +76,68 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* Process Steps */}
-      <section className="section-spacing border-t border-border">
-        <div className="container-wide">
-          <div className="gsap-stagger">
-            {steps.map((step, index) => (
-              <div
-                key={step.step}
-                className={`gsap-stagger-item py-16 md:py-20 ${
-                  index !== steps.length - 1 ? "border-b border-border" : ""
-                }`}
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-                  <div className="lg:col-span-2 text-center lg:text-left">
-                    <span className="text-6xl lg:text-7xl font-serif text-accent/60">{step.step}</span>
-                  </div>
-                  <div className="lg:col-span-4 text-center lg:text-left">
-                    <h2 className="text-2xl md:text-3xl font-serif text-foreground">
-                      {step.title}
-                    </h2>
-                    {step.subtitle && (
-                      <span className="mt-2 inline-block text-sm text-muted-foreground">
-                        ({step.subtitle})
-                      </span>
-                    )}
-                  </div>
-                  <div className="lg:col-span-3 text-center lg:text-left">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                  <div className="lg:col-span-3">
-                    <ul className="space-y-2">
-                      {step.details.map((detail) => (
-                        <li key={detail} className="text-sm text-muted-foreground/70 flex items-center gap-3">
-                          <span className="h-px w-3 bg-accent/50" />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+      <section className="py-16 lg:py-20 border-t border-border">
+        <div className="mx-auto max-w-6xl px-6">
+          {steps.map((step, index) => (
+            <div
+              key={step.step}
+              className={`py-12 md:py-16 ${
+                index !== steps.length - 1 ? "border-b border-border" : ""
+              }`}
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
+                <div className="lg:col-span-2 text-center lg:text-left">
+                  <span className="text-5xl lg:text-6xl font-serif text-accent/60">{step.step}</span>
+                </div>
+                <div className="lg:col-span-4 text-center lg:text-left">
+                  <h2 className="text-2xl md:text-3xl font-serif text-foreground">
+                    {step.title}
+                  </h2>
+                  {step.subtitle && (
+                    <span className="mt-2 inline-block text-sm text-muted-foreground">
+                      ({step.subtitle})
+                    </span>
+                  )}
+                </div>
+                <div className="lg:col-span-3 text-center lg:text-left">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+                <div className="lg:col-span-3">
+                  <ul className="space-y-2">
+                    {step.details.map((detail) => (
+                      <li key={detail} className="text-sm text-muted-foreground/70 flex items-center gap-3">
+                        <span className="h-px w-3 bg-accent/50" />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Compliance Checkpoints */}
-      <section className="section-spacing bg-card">
-        <div className="container-medium text-center">
-          <span className="eyebrow gsap-fade-up">Compliance</span>
-          <h2 className="heading-section mt-6 gsap-fade-up">
+      <section className="py-24 lg:py-32 bg-card">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
+            Compliance
+          </span>
+          <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-normal text-foreground">
             Compliance Checkpoints
           </h2>
-          <p className="body-large mt-8 gsap-fade-up">
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
             Integrated compliance awareness throughout our process.
           </p>
         </div>
         
-        <div className="container-wide mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border gsap-stagger">
+        <div className="mx-auto max-w-6xl px-6 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
             {complianceCheckpoints.map((checkpoint) => (
-              <div key={checkpoint.title} className="bg-background p-10 md:p-12 text-center gsap-stagger-item">
+              <div key={checkpoint.title} className="bg-background p-10 md:p-12 text-center">
                 <checkpoint.icon className="h-8 w-8 text-accent mx-auto" strokeWidth={1} />
                 <h3 className="mt-6 text-xl font-serif text-foreground">{checkpoint.title}</h3>
                 <p className="mt-4 text-sm text-muted-foreground">
@@ -145,27 +147,36 @@ export default function HowWeWorkPage() {
             ))}
           </div>
           
-          <div className="mt-16 text-center gsap-fade-up">
-            <Link href="/compliance" className="btn-outline">
+          <div className="mt-14 text-center">
+            <Link 
+              href="/compliance" 
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
+            >
               View Full Compliance Info
-              <ArrowRight className="ml-3 h-4 w-4" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section-spacing border-t border-border">
-        <div className="container-narrow text-center">
-          <h2 className="heading-section gsap-fade-up">
+      <section className="py-24 lg:py-32 border-t border-border">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="font-serif text-4xl sm:text-5xl font-normal text-foreground">
             Ready to Start?
           </h2>
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 gsap-fade-up">
-            <Link href="/contact" className="btn-primary">
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground"
+            >
               Start a Conversation
-              <ArrowRight className="ml-3 h-4 w-4" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href="/services" className="btn-outline">
+            <Link 
+              href="/services" 
+              className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
+            >
               View Our Services
             </Link>
           </div>

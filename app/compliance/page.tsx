@@ -42,84 +42,86 @@ const complianceSections = [
 
 export default function CompliancePage() {
   return (
-    <div className="bg-background">
+    <div className="bg-background pt-20">
       {/* Hero Section */}
-      <section className="min-h-[60vh] flex items-center justify-center pt-24">
-        <div className="container-narrow text-center py-24 lg:py-32">
-          <span className="eyebrow gsap-fade-up">Regulatory</span>
-          <h1 className="heading-display mt-8 gsap-fade-up">
+      <section className="py-24 lg:py-32">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
+            Regulatory
+          </span>
+          <h1 className="mt-8 font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-foreground leading-[1.1]">
             Compliance
           </h1>
-          <div className="divider-accent mt-10 gsap-line-grow" />
-          <p className="body-large mt-10 gsap-fade-up">
+          <div className="mt-8 h-px w-16 bg-accent mx-auto" />
+          <p className="mt-8 text-lg text-muted-foreground max-w-2xl mx-auto">
             Compliance information and regulatory positioning for SoFiCo Services Limited.
           </p>
         </div>
       </section>
 
       {/* Compliance Sections */}
-      <section className="section-spacing-sm border-t border-border">
-        <div className="container-wide">
-          <div className="gsap-stagger">
-            {complianceSections.map((section, index) => (
-              <div
-                key={section.id}
-                className={`gsap-stagger-item py-16 md:py-20 ${
-                  index !== complianceSections.length - 1 ? "border-b border-border" : ""
-                }`}
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-                  <div className="lg:col-span-1">
-                    <span className="text-5xl font-serif text-accent/60">{section.id}</span>
-                  </div>
-                  <div className="lg:col-span-4">
-                    <h2 className="text-2xl md:text-3xl font-serif text-foreground">
-                      {section.title}
-                    </h2>
-                  </div>
-                  <div className="lg:col-span-7">
-                    <div className="space-y-4">
-                      {section.content.map((paragraph, pIndex) => (
-                        <p key={pIndex} className="text-muted-foreground leading-relaxed">
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
+      <section className="py-16 lg:py-20 border-t border-border">
+        <div className="mx-auto max-w-6xl px-6">
+          {complianceSections.map((section, index) => (
+            <div
+              key={section.id}
+              className={`py-12 md:py-16 ${
+                index !== complianceSections.length - 1 ? "border-b border-border" : ""
+              }`}
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
+                <div className="lg:col-span-1">
+                  <span className="text-4xl lg:text-5xl font-serif text-accent/60">{section.id}</span>
+                </div>
+                <div className="lg:col-span-4">
+                  <h2 className="text-2xl md:text-3xl font-serif text-foreground">
+                    {section.title}
+                  </h2>
+                </div>
+                <div className="lg:col-span-7">
+                  <div className="space-y-4">
+                    {section.content.map((paragraph, pIndex) => (
+                      <p key={pIndex} className="text-muted-foreground leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Additional Information */}
-      <section className="section-spacing bg-card">
-        <div className="container-medium text-center">
-          <span className="eyebrow gsap-fade-up">Support</span>
-          <h2 className="heading-section mt-6 gsap-fade-up">
+      <section className="py-24 lg:py-32 bg-card">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
+            Support
+          </span>
+          <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-normal text-foreground">
             Due Diligence Support
           </h2>
         </div>
         
-        <div className="container-wide mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border gsap-stagger">
-            <div className="bg-background p-10 md:p-12 text-center gsap-stagger-item">
+        <div className="mx-auto max-w-6xl px-6 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
+            <div className="bg-background p-10 md:p-12 text-center">
               <h3 className="text-xl font-serif text-foreground">
                 Documentation
               </h3>
-              <div className="divider-short mt-6" />
+              <div className="mt-6 h-px w-12 bg-border mx-auto" />
               <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-sm mx-auto">
                 We understand that our business partners may need to conduct due 
                 diligence on our company. We are prepared to provide reasonable 
                 documentation to support enhanced due diligence processes.
               </p>
             </div>
-            <div className="bg-background p-10 md:p-12 text-center gsap-stagger-item">
+            <div className="bg-background p-10 md:p-12 text-center">
               <h3 className="text-xl font-serif text-foreground">
                 Questions
               </h3>
-              <div className="divider-short mt-6" />
+              <div className="mt-6 h-px w-12 bg-border mx-auto" />
               <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-sm mx-auto">
                 For questions regarding our compliance position or to request 
                 additional information for due diligence purposes, please contact 
@@ -131,9 +133,9 @@ export default function CompliancePage() {
       </section>
 
       {/* Disclaimer */}
-      <section className="py-20 border-y border-border">
-        <div className="container-narrow text-center">
-          <p className="text-xs text-muted-foreground/60 leading-relaxed gsap-fade-up">
+      <section className="py-16 border-y border-border">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <p className="text-xs text-muted-foreground/60 leading-relaxed">
             The information on this page is provided for informational purposes only and 
             does not constitute professional advice. This information should not be relied upon 
             as a substitute for appropriate professional counsel.
@@ -142,17 +144,23 @@ export default function CompliancePage() {
       </section>
 
       {/* CTA */}
-      <section className="section-spacing">
-        <div className="container-narrow text-center">
-          <h2 className="heading-section gsap-fade-up">
+      <section className="py-24 lg:py-32">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="font-serif text-4xl sm:text-5xl font-normal text-foreground">
             Have Questions?
           </h2>
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 gsap-fade-up">
-            <Link href="/contact" className="btn-primary">
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground"
+            >
               Submit Inquiry
-              <ArrowRight className="ml-3 h-4 w-4" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href="/about" className="btn-outline">
+            <Link 
+              href="/about" 
+              className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
+            >
               Learn About Us
             </Link>
           </div>

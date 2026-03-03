@@ -10,34 +10,39 @@ const processSteps = [
 
 export function ProcessSection() {
   return (
-    <section className="section-spacing bg-card">
-      <div className="container-medium text-center">
-        <span className="eyebrow gsap-fade-up">Our Approach</span>
-        <h2 className="heading-section mt-6 gsap-fade-up">
+    <section className="py-24 lg:py-32 bg-card">
+      <div className="mx-auto max-w-5xl px-6 text-center">
+        <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
+          Our Approach
+        </span>
+        <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-normal text-foreground">
           How We Work
         </h2>
-        <p className="body-large mt-8 gsap-fade-up">
+        <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
           A structured methodology designed for clarity and precision.
         </p>
       </div>
       
-      <div className="container-wide mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8 gsap-stagger">
+      <div className="mx-auto max-w-6xl px-6 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {processSteps.map((step) => (
-            <div key={step.number} className="text-center gsap-stagger-item">
-              <span className="text-7xl lg:text-8xl font-serif text-accent/70">{step.number}</span>
-              <h3 className="mt-6 text-xl font-serif text-foreground">{step.title}</h3>
-              <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-[200px] mx-auto">
+            <div key={step.number} className="text-center">
+              <span className="text-6xl lg:text-7xl font-serif text-accent/60">{step.number}</span>
+              <h3 className="mt-4 text-xl font-serif text-foreground">{step.title}</h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 {step.description}
               </p>
             </div>
           ))}
         </div>
         
-        <div className="mt-24 text-center gsap-fade-up">
-          <Link href="/how-we-work" className="btn-outline">
+        <div className="mt-20 text-center">
+          <Link 
+            href="/how-we-work" 
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
+          >
             Explore Our Process
-            <ArrowRight className="ml-3 h-4 w-4" />
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

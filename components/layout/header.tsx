@@ -10,6 +10,7 @@ const navigation = [
   { name: "Process", href: "/how-we-work" },
   { name: "Vendors", href: "/vendors" },
   { name: "Compliance", href: "/compliance" },
+  { name: "Contact", href: "/contact" },
 ]
 
 export function Header() {
@@ -26,106 +27,101 @@ export function Header() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-background/90 backdrop-blur-md' 
-          : 'bg-transparent'
+          ? 'bg-background border-b border-border' 
+          : 'bg-background'
       }`}
     >
-      <nav className="container-wide flex items-center justify-between py-6 lg:py-8">
-        {/* Logo */}
-        <Link href="/" className="relative z-10">
-          <span className="text-[13px] font-medium uppercase tracking-[0.25em] text-foreground">
-            SoFiCo
-          </span>
-        </Link>
-        
-        {/* Desktop Navigation - Center */}
-        <div className="hidden lg:flex lg:items-center lg:gap-x-12">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-[13px] font-medium uppercase tracking-[0.15em] text-muted-foreground transition-colors duration-300 hover:text-foreground"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-        
-        {/* CTA - Right */}
-        <div className="flex items-center gap-6">
-          <Link 
-            href="/contact"
-            className="hidden lg:block text-[13px] font-medium uppercase tracking-[0.15em] text-foreground transition-colors duration-300 hover:text-accent"
-          >
-            Contact
+      <div className="mx-auto max-w-7xl px-6">
+        <nav className="flex items-center justify-between h-20">
+          {/* Logo - Left */}
+          <Link href="/" className="flex-shrink-0">
+            <span className="text-xl font-semibold tracking-wider text-foreground">
+              SOFICO
+            </span>
           </Link>
           
+          {/* Desktop Navigation - Center */}
+          <div className="hidden lg:flex lg:items-center lg:gap-x-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          
+          {/* CTA Button - Right */}
+          <div className="hidden lg:block">
+            <Link 
+              href="/contact"
+              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium bg-foreground text-background transition-colors duration-200 hover:bg-foreground/90"
+            >
+              Get Started
+            </Link>
+          </div>
+          
+          {/* Mobile menu button */}
           <button
             className="lg:hidden p-2 text-foreground"
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open menu"
           >
-            <Menu className="h-5 w-5" />
+            <Menu className="h-6 w-6" />
           </button>
-        </div>
-      </nav>
+        </nav>
+      </div>
 
       {/* Mobile menu */}
-      <div 
-        className={`lg:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
-          mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-      >
-        <div 
-          className="absolute inset-0 bg-background/80 backdrop-blur-sm" 
-          onClick={() => setMobileMenuOpen(false)}
-          aria-hidden="true"
-        />
-        <div 
-          className={`absolute inset-0 bg-background flex flex-col transition-transform duration-500 ease-out ${
-            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        >
-          <div className="container-wide flex items-center justify-between py-6">
-            <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-              <span className="text-[13px] font-medium uppercase tracking-[0.25em] text-foreground">
-                SoFiCo
+      {mobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-50">
+          <div 
+            className="absolute inset-0 bg-background/80 backdrop-blur-sm" 
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+          <div className="absolute inset-y-0 right-0 w-full max-w-sm bg-background border-l border-border">
+            <div className="flex items-center justify-between h-20 px-6">
+              <span className="text-xl font-semibold tracking-wider text-foreground">
+                SOFICO
               </span>
-            </Link>
-            <button
-              className="p-2 text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-              aria-label="Close menu"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
-          
-          <div className="flex-1 flex flex-col items-center justify-center">
-            <nav className="space-y-8 text-center">
+              <button
+                className="p-2 text-foreground"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            
+            <nav className="px-6 py-8 space-y-6">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block text-3xl font-serif text-foreground hover:text-accent transition-colors duration-300"
+                  className="block text-lg font-medium text-foreground hover:text-accent transition-colors duration-200"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                className="block text-3xl font-serif text-accent"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
+              <div className="pt-6 border-t border-border">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center w-full px-6 py-3 text-sm font-medium bg-foreground text-background"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Get Started
+                </Link>
+              </div>
             </nav>
           </div>
         </div>
-      </div>
+      )}
     </header>
   )
 }

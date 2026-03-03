@@ -170,15 +170,19 @@
   }
   
   .btn-primary {
-    @apply btn-luxury px-10 py-5 bg-foreground text-background hover:bg-accent hover:text-accent-foreground;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground;
   }
   
   .btn-outline {
-    @apply btn-luxury px-10 py-5 border border-border text-foreground hover:border-foreground;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground;
   }
   
   .btn-ghost {
-    @apply btn-luxury px-6 py-3 text-foreground hover:text-accent;
+    @apply inline-flex items-center justify-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-accent;
+  }
+  
+  .btn-link {
+    @apply inline-flex items-center justify-center gap-2 text-sm font-medium uppercase tracking-wider text-foreground transition-colors duration-200 hover:text-accent;
   }
   
   /* Links */
