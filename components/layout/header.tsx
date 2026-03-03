@@ -43,7 +43,7 @@ export function Header() {
           </Link>
           
           {/* Desktop Navigation - Center */}
-          <div className="hidden lg:flex lg:items-center lg:gap-x-8">
+          <div className="hidden md:flex md:items-center md:gap-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -56,10 +56,10 @@ export function Header() {
           </div>
           
           {/* CTA Button - Right */}
-          <div className="hidden lg:block">
+          <div className="hidden md:block">
             <Link 
               href="/contact"
-              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium bg-foreground text-background transition-colors duration-200 hover:bg-foreground/90"
+              className="inline-flex items-center justify-center px-5 py-2 text-sm font-medium bg-foreground text-background transition-colors duration-200 hover:bg-foreground/90"
             >
               Get Started
             </Link>
@@ -67,7 +67,7 @@ export function Header() {
           
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-foreground"
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open menu"
           >
@@ -78,7 +78,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-50">
+        <div className="md:hidden fixed inset-0 z-50">
           <div 
             className="absolute inset-0 bg-background/80 backdrop-blur-sm" 
             onClick={() => setMobileMenuOpen(false)}
