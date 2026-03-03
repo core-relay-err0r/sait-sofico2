@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import { vendorPlaceholders } from "@/content/vendors"
+import { vendors } from "@/content/vendors"
 import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/scroll-animation"
 
 export function VendorsSection() {
@@ -26,13 +26,18 @@ export function VendorsSection() {
       
       <div className="mx-auto max-w-5xl px-6 mt-10 sm:mt-16">
         <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-          {vendorPlaceholders.slice(0, 6).map((vendor, index) => (
+          {vendors.slice(0, 6).map((vendor, index) => (
             <StaggerItem 
               key={vendor.id}
               index={index}
-              className="group border border-border bg-background aspect-[2.5/1] flex items-center justify-center transition-all duration-300 hover:border-primary/50 hover:shadow-sm"
+              className="group border border-border bg-card aspect-[2.5/1] flex flex-col items-center justify-center transition-all duration-300 hover:border-accent/50"
             >
-              <div className="h-6 w-20 rounded bg-muted group-hover:bg-border transition-colors" aria-label={vendor.name} />
+              <span className="text-sm sm:text-base font-medium text-foreground/90 group-hover:text-foreground transition-colors">
+                {vendor.name}
+              </span>
+              <span className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">
+                {vendor.category}
+              </span>
             </StaggerItem>
           ))}
         </StaggerContainer>
