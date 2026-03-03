@@ -28,7 +28,7 @@ export function ContactForm() {
           via corporate email.
         </p>
         <button
-          className="mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
+          className="mt-6 inline-flex items-center justify-center px-8 py-3.5 text-xs font-medium uppercase tracking-widest border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white/10"
           onClick={() => setIsSubmitted(false)}
         >
           Submit Another Inquiry
@@ -98,13 +98,15 @@ export function ContactForm() {
         />
       </div>
 
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
-      >
-        {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-      </button>
+      <div className="pt-4">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full inline-flex items-center justify-center px-8 py-3.5 text-xs font-medium uppercase tracking-widest bg-white text-black transition-all duration-200 hover:bg-accent hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {isSubmitting ? "Submitting..." : "Submit Inquiry"}
+        </button>
+      </div>
     </form>
   )
 }
