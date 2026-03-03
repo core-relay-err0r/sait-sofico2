@@ -1,18 +1,16 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getAdminUsername, getAdminPassword } from "@/lib/env"
+
+// Default credentials - override with ADMIN_USERNAME and ADMIN_PASSWORD env vars
+const DEFAULT_USERNAME = "admin"
+const DEFAULT_PASSWORD = "sofico2024"
 
 export async function POST(request: NextRequest) {
   try {
     const { username, password } = await request.json()
-    const adminUsername = getAdminUsername()
-    const adminPassword = getAdminPassword()
-
-    if (!adminUsername || !adminPassword) {
-      return NextResponse.json(
-        { error: "Admin access not configured" },
-        { status: 500 }
-      )
-    }
+    
+    // Use env vars if set, otherwise use defaults
+    const adminUsername = process.env.ADMIN_USERNAME || DEFAULT_USERNAME
+    const adminPassword = process.env.ADMIN_PASSWORD || DEFAULT_PASSWORD
 
     if (username === adminUsername && password === adminPassword) {
       return NextResponse.json({ success: true })

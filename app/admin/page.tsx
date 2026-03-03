@@ -26,15 +26,13 @@ export default function AdminPage() {
       })
 
       const data = await response.json()
-      console.log("[v0] Auth response:", data)
       
       if (response.ok && data.success) {
         setIsAuthenticated(true)
       } else {
         setError(data.error || "Invalid credentials")
       }
-    } catch (err) {
-      console.log("[v0] Auth error:", err)
+    } catch {
       setError("Authentication failed")
     } finally {
       setIsLoading(false)
