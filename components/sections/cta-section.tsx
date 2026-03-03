@@ -28,14 +28,14 @@ export function CTASection() {
         <ScrollAnimation animation="fade-up" delay={400} className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <Link 
             href="/contact" 
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-2.5 text-xs font-medium uppercase tracking-widest bg-primary text-primary-foreground transition-all duration-200 hover:bg-accent"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-3 text-xs font-medium uppercase tracking-widest bg-white text-black transition-all duration-200 hover:bg-accent hover:text-white"
           >
             Request Introduction
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           <Link 
             href="/services" 
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 sm:py-2.5 text-xs font-medium uppercase tracking-widest border border-border text-foreground transition-all duration-200 hover:border-primary hover:bg-muted"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 sm:py-3 text-xs font-medium uppercase tracking-widest border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white/10"
           >
             View Services
           </Link>
