@@ -36,23 +36,23 @@ export function ServicesSection() {
           {services.map((service) => (
             <div key={service.title} className="gsap-stagger-item bg-background p-10 md:p-12 text-center">
               <h3 className="text-xl font-serif text-foreground">{service.title}</h3>
-              <div className="gsap-line-grow mt-6 h-px w-12 bg-border mx-auto origin-center" />
+              <div className="mt-6 h-px w-12 bg-border mx-auto" />
               <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
             </div>
           ))}
         </div>
-        
-        <div className="gsap-fade-up mt-16 text-center">
-          <Link 
-            href="/services" 
-            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-xs font-medium uppercase tracking-widest border border-border/60 text-foreground/80 transition-all duration-200 hover:border-foreground hover:text-foreground"
-          >
-            View All Services
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
+      </div>
+      
+      <div className="gsap-fade-up mx-auto max-w-6xl px-6 mt-12 text-center">
+        <Link 
+          href="/services" 
+          className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-xs font-medium uppercase tracking-widest border border-border/60 text-foreground/80 transition-all duration-200 hover:border-foreground hover:text-foreground"
+        >
+          View All Services
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
       </div>
     </section>
   )
