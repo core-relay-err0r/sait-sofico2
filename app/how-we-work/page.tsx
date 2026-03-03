@@ -77,43 +77,36 @@ export default function HowWeWorkPage() {
 
       {/* Process Steps */}
       <section className="py-16 lg:py-20 border-t border-border">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-4xl px-6">
           {steps.map((step, index) => (
             <div
               key={step.step}
-              className={`py-12 md:py-16 ${
+              className={`py-16 md:py-20 ${
                 index !== steps.length - 1 ? "border-b border-border" : ""
               }`}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
-                <div className="lg:col-span-2 text-center lg:text-left">
-                  <span className="text-5xl lg:text-6xl font-serif text-accent/60">{step.step}</span>
-                </div>
-                <div className="lg:col-span-4 text-center lg:text-left">
-                  <h2 className="text-2xl md:text-3xl font-serif text-foreground">
-                    {step.title}
-                  </h2>
-                  {step.subtitle && (
-                    <span className="mt-2 inline-block text-sm text-muted-foreground">
-                      ({step.subtitle})
-                    </span>
-                  )}
-                </div>
-                <div className="lg:col-span-3 text-center lg:text-left">
-                  <p className="text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-                <div className="lg:col-span-3">
-                  <ul className="space-y-2">
-                    {step.details.map((detail) => (
-                      <li key={detail} className="text-sm text-muted-foreground/70 flex items-center gap-3">
-                        <span className="h-px w-3 bg-accent/50" />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="text-center">
+                <span className="text-5xl lg:text-6xl font-serif text-accent/60">{step.step}</span>
+                <h2 className="mt-4 text-2xl md:text-3xl font-serif text-foreground">
+                  {step.title}
+                </h2>
+                {step.subtitle && (
+                  <span className="mt-2 inline-block text-sm text-muted-foreground">
+                    ({step.subtitle})
+                  </span>
+                )}
+                <p className="mt-6 text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                  {step.description}
+                </p>
+                <ul className="mt-8 inline-flex flex-col items-center gap-3">
+                  {step.details.map((detail) => (
+                    <li key={detail} className="text-sm text-muted-foreground/70 flex items-center gap-3">
+                      <span className="h-px w-4 bg-accent/50" />
+                      {detail}
+                      <span className="h-px w-4 bg-accent/50" />
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
