@@ -109,7 +109,7 @@ export default function AdminPage() {
     <div className="bg-background pt-20 min-h-screen">
       <section className="py-16 lg:py-24">
         <Container>
-          <div className="max-w-5xl">
+          <div className="max-w-5xl mx-auto text-center">
             <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
               Dashboard
             </span>
@@ -125,7 +125,7 @@ export default function AdminPage() {
 
       <section className="pb-20">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Stats Cards */}
             <div className="border border-border p-6 bg-card">
               <div className="flex items-center gap-3 mb-4">
@@ -158,7 +158,7 @@ export default function AdminPage() {
           </div>
 
           {/* Catalog Table */}
-          <div className="mt-12 max-w-5xl">
+          <div className="mt-12 max-w-5xl mx-auto">
             <h2 className="text-lg font-semibold text-foreground mb-6">Catalog Overview</h2>
             <div className="border border-border overflow-hidden">
               <table className="w-full">
