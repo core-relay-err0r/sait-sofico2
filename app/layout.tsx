@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/header'
@@ -7,10 +7,17 @@ import { createRootMetadata } from '@/lib/metadata'
 
 const inter = Inter({ 
   subsets: ["latin"],
-  variable: '--font-inter'
+  variable: '--font-inter',
+  display: 'swap',
 });
 
 export const metadata: Metadata = createRootMetadata()
+
+export const viewport: Viewport = {
+  themeColor: '#f5f3ef',
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export default function RootLayout({
   children,
@@ -21,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <Header />
-        <main className="min-h-screen">
+        <main>
           {children}
         </main>
         <Footer />

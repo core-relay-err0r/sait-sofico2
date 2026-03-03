@@ -1,12 +1,9 @@
-import type { Metadata } from "next"
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "Compliance | SoFiCo Services Limited",
-  description: "Compliance information and regulatory positioning for SoFiCo Services Limited.",
-}
+import { GSAPWrapper } from "@/components/gsap-provider"
 
 const complianceSections = [
   {
@@ -51,101 +48,109 @@ const complianceSections = [
 
 export default function CompliancePage() {
   return (
-    <div className="bg-background">
-      {/* Header Section */}
-      <section className="py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="eyebrow">Regulatory</span>
-            <h1 className="mt-4 text-4xl font-semibold text-foreground lg:text-5xl text-balance" style={{ letterSpacing: '-0.02em' }}>
-              Compliance
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Compliance information and regulatory positioning for SoFiCo Services Limited. 
-              This page provides clarity regarding our operational scope and regulatory status.
+    <GSAPWrapper>
+      <div className="pt-20">
+        {/* Hero Section */}
+        <section className="py-24 lg:py-32">
+          <div className="container-wide">
+            <div className="max-w-3xl gsap-fade-up">
+              <span className="eyebrow">Regulatory</span>
+              <h1 className="section-heading mt-6 text-balance">
+                Compliance Information
+              </h1>
+              <p className="section-subheading mt-8">
+                Compliance information and regulatory positioning for SoFiCo Services Limited. 
+                This page provides clarity regarding our operational scope and regulatory status.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Compliance Sections */}
+        <section className="pb-24 lg:pb-32">
+          <div className="container-wide">
+            <div className="gsap-stagger-container">
+              <div className="space-y-1">
+                {complianceSections.map((section, index) => (
+                  <div
+                    key={section.id}
+                    id={section.id}
+                    className={`gsap-stagger-item p-8 lg:p-10 ${
+                      index % 2 === 0 ? "bg-card" : "bg-muted/50"
+                    }`}
+                  >
+                    <h2 className="text-xl font-semibold text-foreground lg:text-2xl">
+                      {section.title}
+                    </h2>
+                    <div className="mt-6 space-y-4">
+                      {section.content.map((paragraph, pIndex) => (
+                        <p
+                          key={pIndex}
+                          className="text-muted-foreground leading-relaxed"
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Additional Information */}
+        <section className="py-24 lg:py-32 bg-card border-y border-border">
+          <div className="container-wide">
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 gsap-stagger-container">
+              <div className="gsap-stagger-item p-8 bg-background border border-border/50">
+                <h3 className="text-lg font-semibold text-foreground">
+                  Due Diligence Support
+                </h3>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                  We understand that our business partners may need to conduct due 
+                  diligence on our company. We are prepared to provide reasonable 
+                  documentation and information to support enhanced due diligence (EDD) 
+                  processes upon request.
+                </p>
+              </div>
+              <div className="gsap-stagger-item p-8 bg-background border border-border/50">
+                <h3 className="text-lg font-semibold text-foreground">
+                  Questions
+                </h3>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                  For questions regarding our compliance position or to request 
+                  additional information for due diligence purposes, please contact 
+                  us through our standard inquiry process.
+                </p>
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  className="mt-6 rounded-md border-foreground/20 hover:bg-foreground/5"
+                >
+                  <Link href="/contact">
+                    Submit Inquiry
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Disclaimer */}
+        <section className="py-16">
+          <div className="container-wide">
+            <p className="text-xs text-muted-foreground leading-relaxed max-w-3xl gsap-fade-in">
+              The information on this page is provided for informational purposes only and 
+              does not constitute professional advice. This information should not be relied upon 
+              as a substitute for appropriate professional counsel. SoFiCo Services Limited makes 
+              no representations regarding the applicability of this information to any specific 
+              situation or jurisdiction.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Compliance Sections */}
-      <section className="pb-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="space-y-6">
-            {complianceSections.map((section, index) => (
-              <div
-                key={section.id}
-                id={section.id}
-                className={`border border-border rounded-lg p-8 ${
-                  index % 2 === 0 ? "bg-card" : "bg-muted/50"
-                }`}
-              >
-                <h2 className="text-xl font-semibold text-foreground">
-                  {section.title}
-                </h2>
-                <div className="mt-6 space-y-4">
-                  {section.content.map((paragraph, pIndex) => (
-                    <p
-                      key={pIndex}
-                      className="text-muted-foreground leading-relaxed"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Information */}
-      <section className="py-20 bg-card border-y border-border">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            <div className="border border-border rounded-lg p-6 bg-background">
-              <h3 className="text-lg font-semibold text-foreground">
-                Due Diligence Support
-              </h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                We understand that our business partners may need to conduct due 
-                diligence on our company. We are prepared to provide reasonable 
-                documentation and information to support enhanced due diligence (EDD) 
-                processes upon request.
-              </p>
-            </div>
-            <div className="border border-border rounded-lg p-6 bg-background">
-              <h3 className="text-lg font-semibold text-foreground">
-                Questions
-              </h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                For questions regarding our compliance position or to request 
-                additional information for due diligence purposes, please contact 
-                us through our standard inquiry process.
-              </p>
-              <Button asChild variant="outline" className="mt-4 rounded-lg border-border hover:bg-muted hover:text-foreground">
-                <Link href="/contact">
-                  Submit Inquiry
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Disclaimer */}
-      <section className="py-12 border-t border-border">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <p className="text-xs text-muted-foreground leading-relaxed max-w-4xl">
-            The information on this page is provided for informational purposes only and 
-            does not constitute professional advice. This information should not be relied upon 
-            as a substitute for appropriate professional counsel. SoFiCo Services Limited makes 
-            no representations regarding the applicability of this information to any specific 
-            situation or jurisdiction.
-          </p>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </GSAPWrapper>
   )
 }

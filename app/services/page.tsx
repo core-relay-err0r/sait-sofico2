@@ -1,12 +1,9 @@
-import type { Metadata } from "next"
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Cog, Users, FileText, Globe, ArrowRightLeft, Code } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "Services | SoFiCo Services Limited",
-  description: "Operational coordination services including equipment sourcing, supplier coordination, and trade structuring.",
-}
+import { GSAPWrapper } from "@/components/gsap-provider"
 
 const services = [
   {
@@ -71,7 +68,7 @@ const services = [
   },
   {
     id: "software-development",
-    title: "Software Development for Trade Operations",
+    title: "Software Development",
     icon: Code,
     description: "Custom software solutions for trade operations management.",
     details: [
@@ -85,97 +82,106 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="bg-background">
-      {/* Header Section */}
-      <section className="py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="eyebrow">What We Offer</span>
-            <h1 className="mt-4 text-4xl font-semibold text-foreground lg:text-5xl text-balance" style={{ letterSpacing: '-0.02em' }}>
-              Services
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Comprehensive operational coordination services for B2B trade activities. 
-              Our services focus on coordination, documentation, and process structuring.
-            </p>
+    <GSAPWrapper>
+      <div className="pt-20">
+        {/* Hero Section */}
+        <section className="py-24 lg:py-32">
+          <div className="container-wide">
+            <div className="max-w-3xl gsap-fade-up">
+              <span className="eyebrow">What We Offer</span>
+              <h1 className="section-heading mt-6 text-balance">
+                Our Services
+              </h1>
+              <p className="section-subheading mt-8">
+                Comprehensive operational coordination services for B2B trade activities. 
+                Our services focus on coordination, documentation, and process structuring.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Services List */}
-      <section className="pb-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="space-y-8">
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                className={`border border-border rounded-lg p-8 ${
-                  index % 2 === 0 ? "bg-card" : "bg-muted/50"
-                }`}
-              >
-                <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-muted border border-border">
-                    <service.icon className="h-6 w-6 text-accent" />
+        {/* Services List */}
+        <section className="pb-24 lg:pb-32">
+          <div className="container-wide">
+            <div className="gsap-stagger-container">
+              <div className="space-y-1">
+                {services.map((service, index) => (
+                  <div
+                    key={service.id}
+                    className={`gsap-stagger-item p-8 lg:p-12 ${
+                      index % 2 === 0 ? "bg-card" : "bg-muted/50"
+                    }`}
+                  >
+                    <div className="flex flex-col lg:flex-row lg:items-start gap-8">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                        <service.icon className="h-6 w-6 text-foreground" strokeWidth={1.5} />
+                      </div>
+                      <div className="flex-1">
+                        <h2 className="text-xl font-semibold text-foreground lg:text-2xl">
+                          {service.title}
+                        </h2>
+                        <p className="mt-4 text-muted-foreground leading-relaxed">
+                          {service.description}
+                        </p>
+                        <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                          {service.details.map((detail) => (
+                            <li
+                              key={detail}
+                              className="flex items-center gap-3 text-sm text-muted-foreground"
+                            >
+                              <div className="h-1 w-1 rounded-full bg-foreground" />
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h2 className="text-xl font-semibold text-foreground">
-                      {service.title}
-                    </h2>
-                    <p className="mt-3 text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-                    <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                      {service.details.map((detail) => (
-                        <li
-                          key={detail}
-                          className="flex items-center gap-2 text-sm text-muted-foreground"
-                        >
-                          <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Disclaimer */}
-      <section className="py-16 bg-card border-y border-border">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="border border-border rounded-lg p-6 bg-background">
-            <h3 className="text-sm font-semibold text-foreground">Important Notice</h3>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Not a licensed bank. Not a financial institution. No custody of client funds. 
-              Services are limited to operational coordination and documentation support. 
-              SoFiCo Services Limited does not provide payment processing, financial advisory, 
-              or regulated financial services of any kind.
-            </p>
+        {/* Disclaimer */}
+        <section className="py-16 bg-primary text-primary-foreground">
+          <div className="container-wide">
+            <div className="gsap-fade-up">
+              <h3 className="text-sm font-semibold">Important Notice</h3>
+              <p className="mt-4 text-sm text-primary-foreground/70 leading-relaxed max-w-3xl">
+                Not a licensed bank. Not a financial institution. No custody of client funds. 
+                Services are limited to operational coordination and documentation support. 
+                SoFiCo Services Limited does not provide payment processing, financial advisory, 
+                or regulated financial services of any kind.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild className="rounded-lg">
-              <Link href="/contact">
-                Request a Business Introduction
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" className="rounded-lg border-border hover:bg-muted hover:text-foreground">
-              <Link href="/how-we-work">
-                Learn How We Work
-              </Link>
-            </Button>
+        {/* CTA */}
+        <section className="py-24 lg:py-32">
+          <div className="container-wide">
+            <div className="flex flex-col sm:flex-row gap-4 gsap-fade-up">
+              <Button asChild size="lg" className="h-12 px-8 rounded-md text-base font-medium">
+                <Link href="/contact">
+                  Request Introduction
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button 
+                asChild 
+                variant="outline" 
+                size="lg" 
+                className="h-12 px-8 rounded-md text-base font-medium border-foreground/20 hover:bg-foreground/5"
+              >
+                <Link href="/how-we-work">
+                  Learn How We Work
+                </Link>
+              </Button>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </GSAPWrapper>
   )
 }
