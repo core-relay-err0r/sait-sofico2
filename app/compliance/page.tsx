@@ -1,10 +1,14 @@
+"use client"
+
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Shield, AlertTriangle, FileCheck, Users } from "lucide-react"
+import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/scroll-animation"
 
 const complianceSections = [
   {
     id: "01",
     title: "Not a Licensed Bank",
+    icon: Shield,
     content: [
       "SoFiCo Services Limited is not a licensed bank and does not operate as a deposit-taking or credit institution.",
       "The company does not provide regulated financial services.",
@@ -14,6 +18,7 @@ const complianceSections = [
   {
     id: "02",
     title: "No Custody of Client Funds",
+    icon: AlertTriangle,
     content: [
       "SoFiCo Services Limited does not hold, manage, or take custody of client funds under any circumstances.",
       "We do not operate client accounts, hold deposits, or process payments on behalf of clients.",
@@ -23,6 +28,7 @@ const complianceSections = [
   {
     id: "03",
     title: "Export Control & Sanctions",
+    icon: FileCheck,
     content: [
       "SoFiCo Services Limited maintains operational awareness of export control and sanctions considerations.",
       "We may request documentation related to end-use and end-user information as part of coordination workflows.",
@@ -32,6 +38,7 @@ const complianceSections = [
   {
     id: "04",
     title: "AML / KYC Cooperation",
+    icon: Users,
     content: [
       "SoFiCo Services Limited cooperates with reasonable AML and KYC-related due diligence.",
       "We may request corporate documentation as part of onboarding and ongoing relationship management.",
@@ -45,127 +52,133 @@ export default function CompliancePage() {
     <div className="bg-background pt-20">
       {/* Hero Section */}
       <section className="py-24 lg:py-32">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
-            Regulatory
-          </span>
-          <h1 className="mt-8 font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-foreground leading-[1.1]">
-            Compliance
-          </h1>
-          <div className="mt-8 h-px w-16 bg-accent mx-auto" />
-          <p className="mt-8 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Compliance information and regulatory positioning for SoFiCo Services Limited.
-          </p>
-        </div>
+        <ScrollAnimation animation="fade-up">
+          <div className="mx-auto max-w-3xl px-6 text-center">
+            <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
+              Regulatory
+            </span>
+            <h1 className="mt-8 font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-foreground leading-[1.1]">
+              Compliance
+            </h1>
+            <div className="mt-8 h-px w-16 bg-accent mx-auto" />
+            <p className="mt-8 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Compliance information and regulatory positioning for SoFiCo Services Limited.
+            </p>
+          </div>
+        </ScrollAnimation>
       </section>
 
-      {/* Compliance Sections */}
+      {/* Compliance Cards */}
       <section className="py-16 lg:py-20 border-t border-border">
         <div className="mx-auto max-w-6xl px-6">
-          {complianceSections.map((section, index) => (
-            <div
-              key={section.id}
-              className={`py-12 md:py-16 ${
-                index !== complianceSections.length - 1 ? "border-b border-border" : ""
-              }`}
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
-                <div className="lg:col-span-1">
-                  <span className="text-4xl lg:text-5xl font-serif text-accent/60">{section.id}</span>
-                </div>
-                <div className="lg:col-span-4">
-                  <h2 className="text-2xl md:text-3xl font-serif text-foreground">
-                    {section.title}
-                  </h2>
-                </div>
-                <div className="lg:col-span-7">
-                  <div className="space-y-4">
-                    {section.content.map((paragraph, pIndex) => (
-                      <p key={pIndex} className="text-muted-foreground leading-relaxed">
-                        {paragraph}
-                      </p>
-                    ))}
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {complianceSections.map((section, index) => (
+              <StaggerItem key={section.id} index={index}>
+                <div className="h-full p-8 md:p-10 bg-card border border-border">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                      <section.icon className="h-5 w-5 text-accent" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3">
+                        <span className="text-sm font-medium text-accent/60">{section.id}</span>
+                        <h2 className="text-xl font-serif text-foreground">
+                          {section.title}
+                        </h2>
+                      </div>
+                      <div className="mt-4 space-y-3">
+                        {section.content.map((paragraph, pIndex) => (
+                          <p key={pIndex} className="text-sm text-muted-foreground leading-relaxed">
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Due Diligence Support */}
+      <ScrollAnimation animation="fade-up">
+        <section className="py-24 lg:py-32 bg-card">
+          <div className="mx-auto max-w-5xl px-6 text-center">
+            <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
+              Support
+            </span>
+            <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-normal text-foreground">
+              Due Diligence Support
+            </h2>
+          </div>
+          
+          <div className="mx-auto max-w-4xl px-6 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-8 md:p-10 bg-background border border-border">
+                <h3 className="text-lg font-serif text-foreground">
+                  Documentation
+                </h3>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                  We understand that our business partners may need to conduct due 
+                  diligence on our company. We are prepared to provide reasonable 
+                  documentation to support enhanced due diligence processes.
+                </p>
+              </div>
+              <div className="p-8 md:p-10 bg-background border border-border">
+                <h3 className="text-lg font-serif text-foreground">
+                  Questions
+                </h3>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                  For questions regarding our compliance position or to request 
+                  additional information for due diligence purposes, please contact 
+                  us through our standard inquiry process.
+                </p>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Additional Information */}
-      <section className="py-24 lg:py-32 bg-card">
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-accent">
-            Support
-          </span>
-          <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-normal text-foreground">
-            Due Diligence Support
-          </h2>
-        </div>
-        
-        <div className="mx-auto max-w-6xl px-6 mt-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
-            <div className="bg-background p-10 md:p-12 text-center">
-              <h3 className="text-xl font-serif text-foreground">
-                Documentation
-              </h3>
-              <div className="mt-6 h-px w-12 bg-border mx-auto" />
-              <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-sm mx-auto">
-                We understand that our business partners may need to conduct due 
-                diligence on our company. We are prepared to provide reasonable 
-                documentation to support enhanced due diligence processes.
-              </p>
-            </div>
-            <div className="bg-background p-10 md:p-12 text-center">
-              <h3 className="text-xl font-serif text-foreground">
-                Questions
-              </h3>
-              <div className="mt-6 h-px w-12 bg-border mx-auto" />
-              <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-sm mx-auto">
-                For questions regarding our compliance position or to request 
-                additional information for due diligence purposes, please contact 
-                us through our standard inquiry process.
-              </p>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
       {/* Disclaimer */}
-      <section className="py-16 border-y border-border">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="text-xs text-muted-foreground/60 leading-relaxed">
-            The information on this page is provided for informational purposes only and 
-            does not constitute professional advice. This information should not be relied upon 
-            as a substitute for appropriate professional counsel.
-          </p>
-        </div>
-      </section>
+      <ScrollAnimation animation="fade-in">
+        <section className="py-16 border-y border-border">
+          <div className="mx-auto max-w-3xl px-6 text-center">
+            <p className="text-xs text-muted-foreground/60 leading-relaxed">
+              The information on this page is provided for informational purposes only and 
+              does not constitute professional advice. This information should not be relied upon 
+              as a substitute for appropriate professional counsel.
+            </p>
+          </div>
+        </section>
+      </ScrollAnimation>
 
       {/* CTA */}
-      <section className="py-24 lg:py-32">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="font-serif text-4xl sm:text-5xl font-normal text-foreground">
-            Have Questions?
-          </h2>
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              href="/contact" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground"
-            >
-              Submit Inquiry
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link 
-              href="/about" 
-              className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
-            >
-              Learn About Us
-            </Link>
+      <ScrollAnimation animation="fade-up">
+        <section className="py-24 lg:py-32">
+          <div className="mx-auto max-w-3xl px-6 text-center">
+            <h2 className="font-serif text-4xl sm:text-5xl font-normal text-foreground">
+              Have Questions?
+            </h2>
+            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium uppercase tracking-wider bg-foreground text-background transition-all duration-200 hover:bg-accent hover:text-accent-foreground"
+              >
+                Submit Inquiry
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link 
+                href="/about" 
+                className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium uppercase tracking-wider border border-border text-foreground transition-all duration-200 hover:border-foreground"
+              >
+                Learn About Us
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
     </div>
   )
 }
