@@ -7,6 +7,7 @@ import { Container } from "@/components/container"
 import { catalogItems } from "@/content/catalog"
 
 export default function AdminPage() {
+  const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [error, setError] = useState("")
@@ -21,7 +22,7 @@ export default function AdminPage() {
       const response = await fetch("/api/admin/auth", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ username, password }),
       })
 
       if (response.ok) {
@@ -48,10 +49,25 @@ export default function AdminPage() {
                   <h1 className="text-xl font-semibold text-foreground">Admin Access</h1>
                 </div>
                 <p className="text-sm text-muted-foreground mb-8">
-                  Enter the admin password to access the dashboard.
+                  Enter your credentials to access the dashboard.
                 </p>
 
                 <form onSubmit={handleLogin} className="space-y-6">
+                  <div>
+                    <label htmlFor="username" className="block text-xs font-medium uppercase tracking-wider text-foreground mb-2">
+                      Username
+                    </label>
+                    <input
+                      id="username"
+                      type="text"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                      className="w-full px-4 py-3 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
+                      placeholder="Enter username"
+                      required
+                    />
+                  </div>
+
                   <div>
                     <label htmlFor="password" className="block text-xs font-medium uppercase tracking-wider text-foreground mb-2">
                       Password
@@ -62,7 +78,7 @@ export default function AdminPage() {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       className="w-full px-4 py-3 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                      placeholder="Enter admin password"
+                      placeholder="Enter password"
                       required
                     />
                   </div>

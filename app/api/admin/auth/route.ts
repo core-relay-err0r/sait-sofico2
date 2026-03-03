@@ -1,24 +1,25 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getAdminPassword } from "@/lib/env"
+import { getAdminUsername, getAdminPassword } from "@/lib/env"
 
 export async function POST(request: NextRequest) {
   try {
-    const { password } = await request.json()
+    const { username, password } = await request.json()
+    const adminUsername = getAdminUsername()
     const adminPassword = getAdminPassword()
 
-    if (!adminPassword) {
+    if (!adminUsername || !adminPassword) {
       return NextResponse.json(
         { error: "Admin access not configured" },
         { status: 500 }
       )
     }
 
-    if (password === adminPassword) {
+    if (username === adminUsername && password === adminPassword) {
       return NextResponse.json({ success: true })
     }
 
     return NextResponse.json(
-      { error: "Invalid password" },
+      { error: "Invalid credentials" },
       { status: 401 }
     )
   } catch {

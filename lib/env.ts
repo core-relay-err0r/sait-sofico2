@@ -15,6 +15,10 @@ export function getSiteUrl(): URL {
   }
 }
 
+export function getAdminUsername(): string | undefined {
+  return process.env.ADMIN_USERNAME
+}
+
 export function getAdminPassword(): string | undefined {
   return process.env.ADMIN_PASSWORD
 }
