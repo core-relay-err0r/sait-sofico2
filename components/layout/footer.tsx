@@ -4,9 +4,10 @@ const footerLinks = {
   services: {
     title: "Services",
     links: [
-      { name: "Operational Coordination", href: "/services/operational-coordination" },
-      { name: "Supplier Alignment", href: "/services/supplier-alignment" },
-      { name: "Documentation Support", href: "/services/documentation-support" },
+      { name: "Equipment Sourcing", href: "/services#equipment-sourcing" },
+      { name: "Supplier Coordination", href: "/services#supplier-coordination" },
+      { name: "Trade Finance", href: "/services#trade-finance" },
+      { name: "Software Development", href: "/services#software-development" },
     ]
   },
   company: {

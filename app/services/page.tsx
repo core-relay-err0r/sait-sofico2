@@ -7,39 +7,31 @@ import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/scr
 const services = [
   {
     id: "01",
-    title: "Structured Equipment Sourcing",
-    description: "Coordinated approach to equipment procurement with verified supplier networks. We help align specifications with available options.",
-    details: ["Specification alignment", "Vendor identification", "Quality requirements", "Procurement support"],
+    title: "Equipment Sourcing & Supply",
+    slug: "equipment-sourcing",
+    description: "Sourcing, purchasing, and supplying equipment from leading manufacturers of server and telecommunications hardware, and microelectronic components.",
+    details: ["Server hardware", "Telecommunications equipment", "Microelectronic components", "Leading manufacturers"],
   },
   {
     id: "02",
-    title: "Supplier Coordination",
-    description: "Alignment of supplier requirements and operational specifications for seamless multi-party collaboration.",
-    details: ["Multi-party coordination", "Specification documentation", "Communication facilitation", "Workflow alignment"],
+    title: "Supplier Selection & Coordination",
+    slug: "supplier-coordination",
+    description: "Services for selecting suppliers and negotiating terms, processing payments, and monitoring fulfillment/execution.",
+    details: ["Supplier selection", "Terms negotiation", "Payment processing", "Fulfillment monitoring"],
   },
   {
     id: "03",
-    title: "Commercial Alignment",
-    description: "Documentation sequencing and process structuring for commercial alignment across all parties.",
-    details: ["Documentation sequencing", "Commercial term structuring", "Process documentation", "Workflow support"],
+    title: "Trade Finance & Payments",
+    slug: "trade-finance",
+    description: "Financing supplies and making international payments in any currencies and financial instruments.",
+    details: ["Supply financing", "International payments", "Multi-currency support", "Financial instruments"],
   },
   {
     id: "04",
-    title: "International Trade Structuring",
-    description: "Operational coordination for cross-border trade documentation and compliance requirements.",
-    details: ["Cross-border documentation", "Trade flow coordination", "Documentation alignment", "Process structuring"],
-  },
-  {
-    id: "05",
-    title: "Cross-Border Coordination",
-    description: "Support for structured cross-border documentation workflows and multi-jurisdictional operations.",
-    details: ["Documentation support", "Multi-jurisdictional work", "Workflow documentation", "Process sequencing"],
-  },
-  {
-    id: "06",
-    title: "Software Development",
-    description: "Custom software solutions for trade operations management and workflow automation.",
-    details: ["Trade platforms", "Documentation systems", "Workflow automation", "Integration solutions"],
+    title: "E-Commerce Software Development",
+    slug: "software-development",
+    description: "Software development for e-commerce (online trading) platforms and business automation solutions.",
+    details: ["E-commerce platforms", "Online trading systems", "Business automation", "Custom integrations"],
   },
 ]
 
@@ -70,7 +62,7 @@ export default function ServicesPage() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((service, index) => (
               <StaggerItem key={service.id} index={index}>
-                <div className="h-full p-8 md:p-10 bg-card border border-border hover:border-accent/30 transition-colors">
+                <div id={service.slug} className="h-full p-8 md:p-10 bg-card border border-border hover:border-accent/30 transition-colors scroll-mt-24">
                   <div className="flex items-start gap-4">
                     <span className="text-3xl font-serif text-accent/60">{service.id}</span>
                     <div className="flex-1">
