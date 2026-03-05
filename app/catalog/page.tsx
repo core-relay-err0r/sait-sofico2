@@ -67,35 +67,69 @@ export default async function CatalogPage({ searchParams }: Props) {
             </div>
           ) : (
             <div className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Table Header */}
+              <div className="hidden md:grid grid-cols-12 gap-4 px-4 py-3 border-b border-border text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                <div className="col-span-2">Photo</div>
+                <div className="col-span-3">SKU / Part Number</div>
+                <div className="col-span-5">Description</div>
+                <div className="col-span-2">Price</div>
+              </div>
+
+              {/* Product Rows */}
+              <div className="space-y-4">
                 {catalogItems.map((item) => (
                   <Link
                     key={item.sku}
                     href={`/catalog/${encodeURIComponent(item.sku)}`}
-                    className="group border border-border bg-card overflow-hidden transition-all duration-300 hover:border-accent/50"
+                    className="group grid grid-cols-1 md:grid-cols-12 gap-4 p-4 border border-border bg-card transition-all duration-300 hover:border-accent/50 hover:bg-card/80"
                   >
-                    <div className="relative aspect-[16/10] bg-muted overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
+                    {/* Photo */}
+                    <div className="col-span-1 md:col-span-2">
+                      <div className="relative aspect-square md:aspect-[4/3] bg-muted overflow-hidden">
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
                     </div>
-                    <div className="p-6">
-                      <span className="text-[10px] uppercase tracking-wider text-accent">
-                        {item.category}
+
+                    {/* SKU / Part Number */}
+                    <div className="col-span-1 md:col-span-3 flex flex-col justify-center">
+                      <span className="text-[10px] uppercase tracking-wider text-accent md:hidden">
+                        SKU / Part Number
                       </span>
-                      <h3 className="mt-2 text-lg font-medium text-foreground group-hover:text-accent transition-colors">
+                      <h3 className="text-base font-medium text-foreground group-hover:text-accent transition-colors">
                         {item.name}
                       </h3>
-                      <p className="mt-1 text-xs text-muted-foreground">
+                      <p className="mt-1 text-sm text-muted-foreground font-mono">
                         {item.sku}
                       </p>
-                      <p className="mt-3 text-sm text-muted-foreground line-clamp-2">
+                      <span className="mt-2 inline-block text-[10px] uppercase tracking-wider text-accent/70">
+                        {item.category}
+                      </span>
+                    </div>
+
+                    {/* Description */}
+                    <div className="col-span-1 md:col-span-5 flex flex-col justify-center">
+                      <span className="text-[10px] uppercase tracking-wider text-accent md:hidden mb-1">
+                        Description
+                      </span>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         {item.description}
                       </p>
-                      <div className="mt-4 flex items-center gap-2 text-xs font-medium text-accent">
+                    </div>
+
+                    {/* Price */}
+                    <div className="col-span-1 md:col-span-2 flex flex-col justify-center">
+                      <span className="text-[10px] uppercase tracking-wider text-accent md:hidden mb-1">
+                        Price
+                      </span>
+                      <p className="text-base font-medium text-foreground">
+                        {item.price}
+                      </p>
+                      <div className="mt-2 flex items-center gap-1 text-xs font-medium text-accent">
                         View Details
                         <ArrowRight className="h-3 w-3" />
                       </div>
