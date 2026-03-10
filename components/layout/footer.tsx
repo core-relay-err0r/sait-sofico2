@@ -39,8 +39,14 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
-              <span className="text-2xl font-semibold tracking-[0.15em] text-foreground">
-                SOFICO
+              <span 
+                className="text-3xl text-foreground"
+                style={{ 
+                  fontFamily: "'Brush Script MT', 'Segoe Script', 'Bradley Hand', cursive",
+                  letterSpacing: "-0.02em"
+                }}
+              >
+                SoFiCo
               </span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-sm">

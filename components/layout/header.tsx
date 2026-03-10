@@ -4,6 +4,20 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
+function ScriptLogo({ className = "" }: { className?: string }) {
+  return (
+    <span 
+      className={`text-2xl md:text-3xl font-normal text-foreground ${className}`}
+      style={{ 
+        fontFamily: "'Brush Script MT', 'Segoe Script', 'Bradley Hand', cursive",
+        letterSpacing: "-0.02em"
+      }}
+    >
+      SoFiCo
+    </span>
+  )
+}
+
 const navigation = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
@@ -37,9 +51,7 @@ export function Header() {
         <nav className="flex items-center justify-between h-20">
           {/* Logo - Left */}
           <Link href="/" className="flex-shrink-0">
-            <span className="text-xl font-semibold tracking-wider text-foreground">
-              SOFICO
-            </span>
+            <ScriptLogo />
           </Link>
           
           {/* Desktop Navigation - Center */}
@@ -86,9 +98,7 @@ export function Header() {
           />
           <div className="absolute inset-y-0 right-0 w-full max-w-sm bg-background border-l border-border flex flex-col h-full">
             <div className="flex items-center justify-between h-20 px-6 flex-shrink-0">
-              <span className="text-xl font-semibold tracking-wider text-foreground">
-                SOFICO
-              </span>
+              <ScriptLogo />
               <button
                 className="p-2 text-foreground"
                 onClick={() => setMobileMenuOpen(false)}
