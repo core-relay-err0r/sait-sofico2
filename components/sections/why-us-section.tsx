@@ -1,6 +1,5 @@
 import { Globe, Zap, Users, Lock } from "lucide-react"
-import { ScrollAnimation } from "@/components/scroll-animation"
-import { StaggerContainer, StaggerItem } from "@/components/stagger-animation"
+import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/scroll-animation"
 
 const features = [
   {
