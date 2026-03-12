@@ -4,16 +4,20 @@ import { ScrollAnimation, StaggerContainer, StaggerItem } from "@/components/scr
 
 const services = [
   {
-    title: "Operational Coordination",
-    description: "Structured coordination of cross-border trade operations with systematic documentation and process alignment.",
+    title: "Equipment Sourcing & Supply",
+    description: "Sourcing, purchasing, and supplying equipment from leading manufacturers of server and telecommunications hardware, and microelectronic components.",
   },
   {
-    title: "Supplier Alignment",
-    description: "Vendor assessment, specification matching, and multi-party communication facilitation for trade activities.",
+    title: "Supplier Selection & Coordination",
+    description: "Services for selecting suppliers and negotiating terms, processing payments, and monitoring fulfillment/execution.",
   },
   {
-    title: "Documentation Support",
-    description: "Comprehensive documentation workflows including contract structuring and compliance documentation.",
+    title: "Trade Finance & Payments",
+    description: "Financing supplies and making international payments in any currencies and financial instruments.",
+  },
+  {
+    title: "E-Commerce Software Development",
+    description: "Software development for e-commerce (online trading) platforms and business automation solutions.",
   },
 ]
 
@@ -39,7 +43,7 @@ export function ServicesSection() {
       </div>
       
       <div className="mx-auto max-w-6xl px-6 mt-12 sm:mt-16 lg:mt-20">
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
           {services.map((service, index) => (
             <StaggerItem key={service.title} index={index} className="bg-background p-8 sm:p-10 md:p-12 text-center">
               <h3 className="text-lg sm:text-xl font-serif text-foreground">{service.title}</h3>
