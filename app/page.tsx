@@ -1,5 +1,5 @@
 import { HeroSection } from "@/components/sections/hero-section"
-import { ServicesSection } from "@/components/sections/services-section"
+import { AboutSection } from "@/components/sections/about-section"
 import { ProcessSection } from "@/components/sections/process-section"
 import { ComplianceSection } from "@/components/sections/compliance-section"
 import { ServicesListSection } from "@/components/sections/services-list-section"
@@ -12,7 +12,7 @@ export default function HomePage() {
     <div className="bg-background">
       <HeroSection />
       <SectionDivider />
-      <ServicesSection />
+      <AboutSection />
       <SectionDivider />
       <ProcessSection />
       <SectionDivider />
