@@ -13,23 +13,32 @@ export function ServicesListSection() {
   return (
     <section className="py-20 lg:py-28 bg-background">
       <Container>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-accent mb-12 text-center">
-            Services
-          </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          {/* Left Column - Title */}
+          <div className="lg:col-span-4">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
+              Services
+            </span>
+            <h2 className="mt-4 text-3xl sm:text-4xl font-serif text-foreground">
+              What We Offer
+            </h2>
+          </div>
           
-          <ul className="space-y-0 border-t border-border">
-            {serviceItems.map((item) => (
-              <li key={item.name} className="border-b border-border">
-                <Link 
-                  href={item.href}
-                  className="block py-5 text-lg text-foreground hover:text-accent transition-colors duration-200"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {/* Right Column - List */}
+          <div className="lg:col-span-8">
+            <ul className="border-t border-border">
+              {serviceItems.map((item) => (
+                <li key={item.name} className="border-b border-border">
+                  <Link 
+                    href={item.href}
+                    className="block py-5 text-lg text-foreground hover:text-accent transition-colors duration-200"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Container>
     </section>
