@@ -23,12 +23,12 @@ export function ServicesListSection() {
           
           {/* List - Right Column */}
           <div className="md:col-span-8">
-            <ul>
+            <ul className="space-y-3">
               {services.map((service) => (
-                <li key={service.name} className="border-b border-border first:border-t">
+                <li key={service.name}>
                   <Link
                     href={service.href}
-                    className="block py-5 text-base md:text-lg text-foreground hover:text-accent transition-colors"
+                    className="text-base md:text-lg text-accent hover:text-accent/70 transition-colors"
                   >
                     {service.name}
                   </Link>
