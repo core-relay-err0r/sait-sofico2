@@ -2,11 +2,11 @@ import Link from "next/link"
 import { Container } from "@/components/container"
 
 const serviceItems = [
-  { name: "Electronic Product Development", href: "/services#equipment-sourcing" },
-  { name: "Electronic Design", href: "/services#supplier-coordination" },
-  { name: "Tooling and Mould Manufacturing", href: "/services#trade-finance" },
-  { name: "Electronic Procurement", href: "/services#software-development" },
-  { name: "Electronic Manufacturing", href: "/services" },
+  { name: "Electronic Product Development", href: "/services#electronic-product-development" },
+  { name: "Electronic Design", href: "/services#electronic-design" },
+  { name: "Tooling and Mould Manufacturing", href: "/services#tooling-mould-manufacturing" },
+  { name: "Electronic Procurement", href: "/services#electronic-procurement" },
+  { name: "Electronic Manufacturing", href: "/services#electronic-manufacturing" },
 ]
 
 export function ServicesListSection() {

@@ -4,10 +4,11 @@ const footerLinks = {
   services: {
     title: "Services",
     links: [
-      { name: "Equipment Sourcing", href: "/services#equipment-sourcing" },
-      { name: "Supplier Coordination", href: "/services#supplier-coordination" },
-      { name: "Trade Finance", href: "/services#trade-finance" },
-      { name: "Software Development", href: "/services#software-development" },
+      { name: "Product Development", href: "/services#electronic-product-development" },
+      { name: "Electronic Design", href: "/services#electronic-design" },
+      { name: "Tooling & Mould", href: "/services#tooling-mould-manufacturing" },
+      { name: "Procurement", href: "/services#electronic-procurement" },
+      { name: "Manufacturing", href: "/services#electronic-manufacturing" },
     ]
   },
   company: {
