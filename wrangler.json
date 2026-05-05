@@ -3,8 +3,5 @@
   "name": "sait-sofico",
   "compatibility_date": "2025-05-01",
   "compatibility_flags": ["nodejs_compat"],
-  "pages_build_output_dir": ".open-next/cloudflare",
-  "assets": {
-    "binding": "ASSETS"
-  }
+  "pages_build_output_dir": ".open-next/cloudflare"
 }
