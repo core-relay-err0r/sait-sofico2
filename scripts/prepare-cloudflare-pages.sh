@@ -8,6 +8,11 @@ OUTPUT_DIR=".open-next/cloudflare"
 # Copy the worker.js as _worker.js (required by Cloudflare Pages)
 cp .open-next/worker.js "$OUTPUT_DIR/_worker.js"
 
+# Remove durable object exports that cause errors without proper wrangler config
+sed -i '/export { DOQueueHandler }/d' "$OUTPUT_DIR/_worker.js"
+sed -i '/export { DOShardedTagCache }/d' "$OUTPUT_DIR/_worker.js"
+sed -i '/export { BucketCachePurge }/d' "$OUTPUT_DIR/_worker.js"
+
 # Create cloudflare subdirectory and copy required files
 mkdir -p "$OUTPUT_DIR/cloudflare"
 cp "$OUTPUT_DIR/images.js" "$OUTPUT_DIR/cloudflare/"
