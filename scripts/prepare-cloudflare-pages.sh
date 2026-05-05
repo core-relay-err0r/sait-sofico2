@@ -12,6 +12,7 @@ cp .open-next/worker.js "$OUTPUT_DIR/_worker.js"
 mkdir -p "$OUTPUT_DIR/cloudflare"
 cp "$OUTPUT_DIR/images.js" "$OUTPUT_DIR/cloudflare/"
 cp "$OUTPUT_DIR/init.js" "$OUTPUT_DIR/cloudflare/"
+cp "$OUTPUT_DIR/next-env.mjs" "$OUTPUT_DIR/cloudflare/"
 cp "$OUTPUT_DIR/skew-protection.js" "$OUTPUT_DIR/cloudflare/"
 
 # Copy middleware directory
