@@ -1,11 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sofico",
-  "compatibility_date": "2026-04-30",
+  "compatibility_date": "2025-05-01",
   "compatibility_flags": ["nodejs_compat"],
-  "main": ".open-next/worker.js",
-  "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS"
-  }
+  "pages_build_output_dir": ".vercel/output/static"
 }
