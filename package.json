@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "build:cloudflare": "opennextjs-cloudflare build",
+    "build:cloudflare": "opennextjs-cloudflare build && cp .open-next/worker.js .open-next/cloudflare/_worker.js",
     "preview:cloudflare": "opennextjs-cloudflare build && wrangler pages dev",
     "deploy:cloudflare": "opennextjs-cloudflare build && wrangler pages deploy"
   },
