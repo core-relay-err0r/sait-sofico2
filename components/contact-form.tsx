@@ -1,106 +1,42 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
-
-declare global {
-  interface Window {
-    hcaptcha?: {
-      render: (container: string | HTMLElement, options: Record<string, unknown>) => string
-      getResponse: (widgetId: string) => string
-      reset: (widgetId: string) => void
-    }
-    onHCaptchaLoad?: () => void
-  }
-}
-
-const HCAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY
+import { useState } from "react"
 
 export function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const [error, setError] = useState("")
-  const [captchaToken, setCaptchaToken] = useState("")
-  const captchaRef = useRef<HTMLDivElement>(null)
-  const widgetIdRef = useRef<string | null>(null)
 
-  useEffect(() => {
-    if (!HCAPTCHA_SITE_KEY || !captchaRef.current) return
-
-    const renderCaptcha = () => {
-      if (window.hcaptcha && captchaRef.current && widgetIdRef.current === null) {
-        widgetIdRef.current = window.hcaptcha.render(captchaRef.current, {
-          sitekey: HCAPTCHA_SITE_KEY,
-          callback: (token: string) => setCaptchaToken(token),
-          "expired-callback": () => setCaptchaToken(""),
-          theme: "dark",
-        })
-      }
-    }
-
-    if (window.hcaptcha) {
-      renderCaptcha()
-    } else {
-      window.onHCaptchaLoad = renderCaptcha
-      const script = document.createElement("script")
-      script.src = "https://js.hcaptcha.com/1/api.js?onload=onHCaptchaLoad&render=explicit"
-      script.async = true
-      document.head.appendChild(script)
-    }
-  }, [])
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    setError("")
-
     const formData = new FormData(e.currentTarget)
+    
+    const companyName = formData.get("companyName") as string
+    const contactPerson = formData.get("contactPerson") as string
+    const email = formData.get("email") as string
+    const message = formData.get("message") as string
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          companyName: formData.get("companyName"),
-          contactPerson: formData.get("contactPerson"),
-          email: formData.get("email"),
-          message: formData.get("message"),
-          captchaToken,
-        }),
-      })
-
-      const data = await response.json()
-
-      if (!response.ok) {
-        setError(data.error || "Submission failed. Please try again.")
-        setIsSubmitting(false)
-        return
-      }
-
-      setIsSubmitting(false)
-      setIsSubmitted(true)
-    } catch {
-      setError("An error occurred. Please try again.")
-      setIsSubmitting(false)
-    }
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Inquiry from ${companyName}`)
+    const body = encodeURIComponent(
+      `Company: ${companyName}\nContact Person: ${contactPerson}\nEmail: ${email}\n\nMessage:\n${message}`
+    )
+    
+    window.location.href = `mailto:contact@soficoservice.com?subject=${subject}&body=${body}`
+    setIsSubmitted(true)
   }
 
   if (isSubmitted) {
     return (
       <div className="mt-8 p-8 bg-muted border border-border text-center">
         <h3 className="text-xl font-serif text-foreground">
-          Inquiry Submitted
+          Email Client Opened
         </h3>
         <p className="mt-4 text-sm text-muted-foreground">
-          Thank you for your inquiry. We will review your submission and respond 
-          via corporate email.
+          Your email client should have opened with the inquiry details. 
+          Please send the email to complete your submission.
         </p>
         <button
           className="mt-6 inline-flex items-center justify-center px-8 py-3.5 text-xs font-medium uppercase tracking-widest border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white/10"
-          onClick={() => {
-            setIsSubmitted(false)
-            setCaptchaToken("")
-            widgetIdRef.current = null
-          }}
+          onClick={() => setIsSubmitted(false)}
         >
           Submit Another Inquiry
         </button>
@@ -169,23 +105,12 @@ export function ContactForm() {
         />
       </div>
 
-      {HCAPTCHA_SITE_KEY && (
-        <div className="flex justify-center">
-          <div ref={captchaRef} />
-        </div>
-      )}
-
-      {error && (
-        <p className="text-sm text-red-500 text-center">{error}</p>
-      )}
-
       <div className="pt-4">
         <button
           type="submit"
-          disabled={isSubmitting}
-          className="w-full inline-flex items-center justify-center px-8 py-3.5 text-xs font-medium uppercase tracking-widest bg-white text-black transition-all duration-200 hover:bg-accent hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full inline-flex items-center justify-center px-8 py-3.5 text-xs font-medium uppercase tracking-widest bg-white text-black transition-all duration-200 hover:bg-accent hover:text-white"
         >
-          {isSubmitting ? "Submitting..." : "Submit Inquiry"}
+          Submit Inquiry
         </button>
       </div>
     </form>

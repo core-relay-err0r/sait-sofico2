@@ -1,110 +1,8 @@
-"use client"
-
-import { useState } from "react"
-import { Lock, Package, Settings, FileText } from "lucide-react"
-// Admin Dashboard
+import { Package, FileText, Settings } from "lucide-react"
 import { Container } from "@/components/container"
 import { catalogItems } from "@/content/catalog"
 
 export default function AdminPage() {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [error, setError] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
-
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError("")
-
-    try {
-      const response = await fetch("/api/admin/auth", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      })
-
-      const data = await response.json()
-      
-      if (response.ok && data.success) {
-        setIsAuthenticated(true)
-      } else {
-        setError(data.error || "Invalid credentials")
-      }
-    } catch {
-      setError("Authentication failed")
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
-  if (!isAuthenticated) {
-    return (
-      <div className="bg-background pt-20 min-h-screen">
-        <section className="py-20 lg:py-28">
-          <Container>
-            <div className="max-w-md mx-auto">
-              <div className="border border-border p-8 sm:p-10 bg-card">
-                <div className="flex items-center gap-3 mb-6">
-                  <Lock className="h-5 w-5 text-accent" />
-                  <h1 className="text-xl font-semibold text-foreground">Admin Access</h1>
-                </div>
-                <p className="text-sm text-muted-foreground mb-8">
-                  Enter your credentials to access the dashboard.
-                </p>
-
-                <form onSubmit={handleLogin} className="space-y-6">
-                  <div>
-                    <label htmlFor="username" className="block text-xs font-medium uppercase tracking-wider text-foreground mb-2">
-                      Username
-                    </label>
-                    <input
-                      id="username"
-                      type="text"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                      className="w-full px-4 py-3 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                      placeholder="Enter username"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="password" className="block text-xs font-medium uppercase tracking-wider text-foreground mb-2">
-                      Password
-                    </label>
-                    <input
-                      id="password"
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      className="w-full px-4 py-3 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                      placeholder="Enter password"
-                      required
-                    />
-                  </div>
-
-                  {error && (
-                    <p className="text-sm text-red-500">{error}</p>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="w-full px-6 py-3.5 text-xs font-medium uppercase tracking-widest bg-white text-black transition-all duration-200 hover:bg-accent hover:text-white disabled:opacity-50"
-                  >
-                    {isLoading ? "Authenticating..." : "Login"}
-                  </button>
-                </form>
-              </div>
-            </div>
-          </Container>
-        </section>
-      </div>
-    )
-  }
-
   return (
     <div className="bg-background pt-20 min-h-screen">
       <section className="py-16 lg:py-24">
@@ -117,7 +15,7 @@ export default function AdminPage() {
               Admin Panel
             </h1>
             <p className="mt-4 text-muted-foreground">
-              Manage catalog entries and site settings.
+              Catalog overview and site information.
             </p>
           </div>
         </Container>
@@ -185,8 +83,8 @@ export default function AdminPage() {
 
             <div className="mt-8 border border-border p-6 bg-card">
               <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">Note:</strong> Full catalog editing functionality 
-                will be available in a future update. Currently displaying read-only catalog data.
+                <strong className="text-foreground">Note:</strong> This is a read-only catalog overview. 
+                For catalog updates, please contact the development team.
               </p>
             </div>
           </div>
