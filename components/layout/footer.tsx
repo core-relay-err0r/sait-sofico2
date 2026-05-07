@@ -56,8 +56,8 @@ export function Footer() {
             <div className="mt-6 space-y-2">
               <p className="text-sm text-muted-foreground">
                 <span className="text-foreground/70">Email:</span>{" "}
-                <a href="mailto:info@sofico.hk" className="text-accent hover:text-accent/80 transition-colors">
-                  info@sofico.hk
+                <a href="mailto:info@soficoserv.com" className="text-accent hover:text-accent/80 transition-colors">
+                  info@soficoserv.com
                 </a>
               </p>
               <p className="text-sm text-muted-foreground">

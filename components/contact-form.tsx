@@ -20,7 +20,7 @@ export function ContactForm() {
       `Company: ${companyName}\nContact Person: ${contactPerson}\nEmail: ${email}\n\nMessage:\n${message}`
     )
     
-    window.location.href = `mailto:contact@soficoservice.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:info@soficoserv.com?subject=${subject}&body=${body}`
     setIsSubmitted(true)
   }
 
