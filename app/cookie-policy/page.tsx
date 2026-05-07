@@ -38,7 +38,7 @@ const sections = [
   {
     title: "5. Contact Information",
     content: [
-      "For questions regarding this Cookie Policy, please contact us at: contact@sofico.example (placeholder)",
+      "For questions regarding this Cookie Policy, please contact us at: info@soficoserv.com",
     ],
   },
 ]

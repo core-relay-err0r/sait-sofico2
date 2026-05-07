@@ -56,7 +56,7 @@ const sections = [
   {
     title: "8. Contact Information",
     content: [
-      "For questions regarding these Terms of Use, please contact us at: contact@sofico.example (placeholder)",
+      "For questions regarding these Terms of Use, please contact us at: info@soficoserv.com",
     ],
   },
 ]
